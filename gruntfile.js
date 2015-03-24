@@ -47,7 +47,11 @@ module.exports = function(grunt) {
 				options: {
 					livereload: true
 				}
-			}
+			},
+            clientLESS: {
+                files: ['assets/less/*.less','public/modules/**/*.less'],
+                tasks: ['less']
+            }
 		},
 		jshint: {
 			all: {
@@ -63,6 +67,26 @@ module.exports = function(grunt) {
 			},
 			all: {
 				src: watchFiles.clientCSS
+			}
+		},
+		less: {
+		    development: {
+		        options: {
+		            paths: []
+		        },
+		        files: [{
+		            src: ['assets/less/*.less', 'public/modules/**/*.less'],
+		            dest: 'public/modules/core/css/core.css'
+		        }]
+		    },
+		    production: {
+		        options: {
+		            paths: []
+		        },
+		        files: [{
+		            src: ['assets/less/*.less', 'public/modules/**/*.less'],
+		            dest: 'public/modules/core/css/core.css'
+		        }]
 			}
 		},
 		uglify: {
