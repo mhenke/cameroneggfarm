@@ -8,7 +8,8 @@ module.exports = function(grunt) {
 		clientViews: ['public/modules/**/views/**/*.html'],
 		clientJS: ['public/js/*.js', 'public/modules/**/*.js'],
 		clientCSS: ['public/modules/**/*.css'],
-		mochaTests: ['app/tests/**/*.js']
+		mochaTests: ['app/tests/**/*.js'],
+		clientLess: ['assets/less/*.less','public/modules/**/*.less']
 	};
 
 	// Project Configuration
@@ -48,8 +49,8 @@ module.exports = function(grunt) {
 					livereload: true
 				}
 			},
-            clientLESS: {
-                files: ['assets/less/*.less','public/modules/**/*.less'],
+            clientLess: {
+                files: watchFiles.clientLess,
                 tasks: ['less']
             }
 		},
@@ -72,19 +73,19 @@ module.exports = function(grunt) {
 		less: {
 		    development: {
 		        options: {
-		            paths: []
+		        	paths: 'assets/'
 		        },
 		        files: [{
-		            src: ['assets/less/*.less', 'public/modules/**/*.less'],
+		            src: ['assets/less/*.less', 'public/modules/**/*.less','bootstrap.less'],
 		            dest: 'public/modules/core/css/core.css'
 		        }]
 		    },
 		    production: {
 		        options: {
-		            paths: []
-		        },
+                    paths: 'assets/'
+                },
 		        files: [{
-		            src: ['assets/less/*.less', 'public/modules/**/*.less'],
+		            src: ['assets/less/*.less', 'public/modules/**/*.less','bootstrap.less'],
 		            dest: 'public/modules/core/css/core.css'
 		        }]
 			}
@@ -168,7 +169,7 @@ module.exports = function(grunt) {
 
 	// Load NPM tasks
 	require('load-grunt-tasks')(grunt);
-
+	
 	// Making grunt default to force in order not to break the project.
 	grunt.option('force', true);
 
@@ -191,11 +192,12 @@ module.exports = function(grunt) {
 	grunt.registerTask('secure', ['env:secure', 'lint', 'concurrent:default']);
 
 	// Lint task(s).
-	grunt.registerTask('lint', ['jshint', 'csslint']);
+	grunt.registerTask('lint', ['jshint', 'less', 'csslint']);
 
 	// Build task(s).
 	grunt.registerTask('build', ['lint', 'loadConfig', 'ngAnnotate', 'uglify', 'cssmin']);
 
 	// Test task.
 	grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
+	
 };
