@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 		clientJS: ['public/js/*.js', 'public/modules/**/*.js'],
 		clientCSS: ['public/modules/**/*.css'],
 		mochaTests: ['app/tests/**/*.js'],
-		clientLess: ['assets/less/*.less','public/modules/**/*.less']
+		clientLess: ['public/modules/**/*.less']
 	};
 
 	// Project Configuration
@@ -73,19 +73,19 @@ module.exports = function(grunt) {
 		less: {
 		    development: {
 		        options: {
-		        	paths: 'assets/'
+		        	 
 		        },
 		        files: [{
-		            src: ['assets/less/*.less', 'public/modules/**/*.less','bootstrap.less'],
-		            dest: 'public/modules/core/css/core.css'
+		            src: ['assets/less/theme.less', 'assets/less/style.less', 'public/modules/**/*.less'],
+		            dest: 'public/modules/core/css/core2.css'
 		        }]
 		    },
 		    production: {
 		        options: {
-                    paths: 'assets/'
+                   
                 },
 		        files: [{
-		            src: ['assets/less/*.less', 'public/modules/**/*.less','bootstrap.less'],
+		            src: ['assets/less/theme.less', 'assets/less/style.less', 'public/modules/**/*.less'],
 		            dest: 'public/modules/core/css/core.css'
 		        }]
 			}
@@ -169,6 +169,7 @@ module.exports = function(grunt) {
 
 	// Load NPM tasks
 	require('load-grunt-tasks')(grunt);
+	
 	
 	// Making grunt default to force in order not to break the project.
 	grunt.option('force', true);
