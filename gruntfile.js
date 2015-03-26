@@ -125,6 +125,18 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		concat: {
+		    dist: {
+		    	  options: {
+			      	separator: ';',
+			    },
+		    	files: {
+		        	'public/js/layout.server.view.1.js': ['assets/js/jquery.js', 'assets/js/camera.min.js', 'assets/js/jquery.equalheights.js', 'assets/js/jquery.mobilemenu.js', 'assets/js/jquery.easing.1.3.js', 'assets/js/jquery-migrate-1.2.1.min.js'],
+			        'public/js/layout.server.view.2.js': ['assets/js/TMForm.js', 'assets/js/modal.js', 'public/lib/bootstrap-filestyle/src/bootstrap-filestyle.js'],
+			        'public/js/layout.server.view.3.js': ['public/lib/wow/dist/wow.min.js', 'assets/js/wow/device.min.js', 'assets/js/jquery.mobile.customized.min.js'],
+			    },
+		    },
+		  },
 		nodemon: {
 			dev: {
 				script: 'server.js',
@@ -214,7 +226,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('lint', ['jshint', 'less', 'csslint']);
 
 	// Build task(s).
-	grunt.registerTask('build', ['lint', 'loadConfig', 'ngAnnotate', 'uglify', 'cssmin', 'imagemin']);
+	grunt.registerTask('build', ['lint', 'loadConfig', 'ngAnnotate', 'uglify', 'cssmin', 'concat', 'imagemin']);
 
 	// Test task.
 	grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
