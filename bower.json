@@ -17,6 +17,7 @@
     "animate.less": "*",
     "bootstrap-filestyle": "~1.1.2",
     "wow": "~1.0.3",
-    "superfish": "~1.7.5"
+    "superfish": "~1.7.5",
+    "font-awesome": "~4.3.0"
   }
 }
