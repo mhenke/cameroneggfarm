@@ -30,6 +30,7 @@
     "grunt-cli": "~0.1.13",
     "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-less": "^1.0.0",
+    "grunt-zopfli": "^0.3.2",
     "helmet": "~0.5.0",
     "less": "^2.4.0",
     "lodash": "~2.4.1",
