@@ -116,7 +116,9 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'public/dist/application.min.js': 'public/dist/application.js',
-            	    'public/dist/templates.min.js': 'public/dist/templates.js'
+            	    'public/js/layout.server.view.1.min.js': 'public/js/layout.server.view.1.js',
+            	    'public/js/layout.server.view.2.min.js': 'public/js/layout.server.view.2.js',
+            	    'public/js/layout.server.view.3.min.js': 'public/js/layout.server.view.3.js'
 				}
 			}
 		},
@@ -256,7 +258,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('lint', ['jshint', 'less', 'csslint']);
 
 	// Build task(s).
-	grunt.registerTask('build', ['lint', 'loadConfig', "ngtemplates", 'ngAnnotate', 'uglify', 'cssmin', 'concat']);
+	grunt.registerTask('build', ['lint', 'loadConfig', "ngtemplates", 'ngAnnotate', 'concat', 'uglify', 'cssmin']);
 
 	// Test task.
 	grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);

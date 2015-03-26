@@ -19,5 +19,8 @@
     "wow": "~1.0.3",
     "superfish": "~1.7.5",
     "font-awesome": "~4.3.0"
+  },
+  "resolutions": {
+    "jquery": ">= 1.9.1"
   }
 }
