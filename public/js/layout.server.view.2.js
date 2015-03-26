@@ -344,16 +344,7 @@ regula.custom({
 	,validator:function(){
 		return /^\+?(\d[\d\-\+\(\) ]{5,}\d$)/.test(this.value)
 	}
-});/* ========================================================================
- * Bootstrap: modal.js v3.1.1
- * http://getbootstrap.com/javascript/#modals
- * ========================================================================
- * Copyright 2011-2014 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
-
-
-+function ($) {
+});+function ($) {
   'use strict';
 
   // MODAL CLASS DEFINITION
@@ -615,16 +606,7 @@ regula.custom({
   })
 
 }(jQuery);
-;/*
- * bootstrap-filestyle
- * doc: http://markusslima.github.io/bootstrap-filestyle/
- * github: https://github.com/markusslima/bootstrap-filestyle
- *
- * Copyright (c) 2014 Markus Vinicius da Silva Lima
- * Version 1.1.2
- * Licensed under the MIT license.
- */
-(function($) {"use strict";
+;(function($) {"use strict";
 
 	var Filestyle = function(element, options) {
 		this.options = options;

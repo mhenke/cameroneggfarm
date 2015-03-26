@@ -110,18 +110,21 @@ module.exports = function(grunt) {
 		uglify: {
 			production: {
 				options: {
-					mangle: false,
+					mangle: true,
+            		compress: false,
 					sourceMap: true
 				},
 				files: {
-					'public/dist/application.min.js': 'public/dist/application.js'
+					'public/dist/application.min.js': 'public/dist/application.js',
+            	    'public/dist/templates.min.js': 'public/dist/templates.js'
 				}
 			}
 		},
 		cssmin: {
 			combine: {
 				files: {
-					'public/dist/application.min.css': '<%= applicationCSSFiles %>'
+					'public/dist/application.min.css': '<%= applicationCSSFiles %>',
+					'public/dist/vendor.min.css': '<%= vendorCSSFiles %>'
 				}
 			}
 		},
@@ -129,11 +132,13 @@ module.exports = function(grunt) {
 		    dist: {
 		    	  options: {
 			      	separator: ';',
+		            stripBanners: true
 			    },
 		    	files: {
 		        	'public/js/layout.server.view.1.js': ['assets/js/jquery.js', 'assets/js/camera.min.js', 'assets/js/jquery.equalheights.js', 'assets/js/jquery.mobilemenu.js', 'assets/js/jquery.easing.1.3.js', 'assets/js/jquery-migrate-1.2.1.min.js'],
 			        'public/js/layout.server.view.2.js': ['assets/js/TMForm.js', 'assets/js/modal.js', 'public/lib/bootstrap-filestyle/src/bootstrap-filestyle.js'],
 			        'public/js/layout.server.view.3.js': ['public/lib/wow/dist/wow.min.js', 'assets/js/wow/device.min.js', 'assets/js/jquery.mobile.customized.min.js'],
+			        'public/dist/vendor.min.js': '<%= vendorJavaScriptFiles %>',
 			    },
 		    },
 		  },
@@ -176,6 +181,22 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		 ngtemplates: {
+            options: {
+                htmlmin: {
+                    collapseWhitespace: true,
+                    removeComments: true
+                },
+                url: function(url) {
+                    return url.replace("public", "assets");
+                },
+                prefix: "/"
+            },
+            "meanjs-template": {
+                src: "public/modules/**/**.html",
+                dest: "public/dist/templates.js"
+            }
+        },
 		concurrent: {
 			default: ['nodemon', 'watch'],
 			debug: ['nodemon', 'watch', 'node-inspector'],
@@ -235,9 +256,8 @@ module.exports = function(grunt) {
 	grunt.registerTask('lint', ['jshint', 'less', 'csslint']);
 
 	// Build task(s).
-	grunt.registerTask('build', ['lint', 'loadConfig', 'ngAnnotate', 'uglify', 'cssmin', 'concat', 'imagemin']);
+	grunt.registerTask('build', ['lint', 'loadConfig', "ngtemplates", 'ngAnnotate', 'uglify', 'cssmin', 'concat']);
 
 	// Test task.
 	grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
-	
 };
