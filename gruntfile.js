@@ -72,20 +72,24 @@ module.exports = function(grunt) {
 		},
 		less: {
 		    development: {
-		        options: {
-		        	 
+		       options: {
+		          compress: true,
+		          yuicompress: true,
+		          optimization: 2
 		        },
 		        files: [{
-		            src: ['assets/less/theme.less', 'assets/less/style.less', 'public/modules/**/*.less'],
+		            src: ['assets/less/style.less', 'assets/less/theme.less', 'public/modules/**/*.less'],
 		            dest: 'public/modules/core/css/core.css'
 		        }]
 		    },
 		    production: {
 		        options: {
-                   
-                },
+                  compress: true,
+		          yuicompress: true,
+		          optimization: 2
+		        },
 		        files: [{
-		            src: ['assets/less/theme.less', 'assets/less/style.less', 'public/modules/**/*.less'],
+		            src: ['assets/less/style.less', 'assets/less/theme.less', 'public/modules/**/*.less'],
 		            dest: 'public/modules/core/css/core.css'
 		        }]
 			}
