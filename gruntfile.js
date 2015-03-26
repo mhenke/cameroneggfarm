@@ -94,10 +94,24 @@ module.exports = function(grunt) {
 		        }]
 			}
 		},
+		imagemin: {
+		   dist: {
+		      options: {
+		        optimizationLevel: 5
+		      },
+		      files: [{
+		         expand: true,
+		         cwd: 'public/img',
+		         src: ['**/*.{png,jpg,gif}'],
+		         dest: 'public/img'
+		      }]
+		   }
+		},
 		uglify: {
 			production: {
 				options: {
-					mangle: false
+					mangle: false,
+					sourceMap: true
 				},
 				files: {
 					'public/dist/application.min.js': 'public/dist/application.js'
@@ -200,7 +214,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('lint', ['jshint', 'less', 'csslint']);
 
 	// Build task(s).
-	grunt.registerTask('build', ['lint', 'loadConfig', 'ngAnnotate', 'uglify', 'cssmin']);
+	grunt.registerTask('build', ['lint', 'loadConfig', 'ngAnnotate', 'uglify', 'cssmin', 'imagemin']);
 
 	// Test task.
 	grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
