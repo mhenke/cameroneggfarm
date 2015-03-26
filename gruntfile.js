@@ -137,6 +137,15 @@ module.exports = function(grunt) {
 			    },
 		    },
 		  },
+		autoprefixer: {
+			 // prefix all files
+		    multiple_files: {
+		      expand: true,
+		      flatten: true,
+		      src: 'assets/css/*.css', // 'public/modules/**/*.css'
+		      dest: 'public/css/' // 'public/modules/**/*.css'
+		    },
+		},
 		nodemon: {
 			dev: {
 				script: 'server.js',
