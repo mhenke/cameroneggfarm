@@ -1,0 +1,17 @@
+/*===========================================================================================================================*/
+/*Camera Additions and Overrides*/
+/*-------------------------------------------------*/
+/*-------------------------------------------------*/
+
+.camera_caption .title {
+    font:72px/86px 'Fjalla One';
+    color:#fff;
+    text-transform:uppercase;
+    letter-spacing:-1px;
+    margin-bottom:24px;
+}
+.camera_caption .description {
+    font:24px/38px 'Georgia';
+    color:#fff;
+    margin-bottom:74px;
+}
