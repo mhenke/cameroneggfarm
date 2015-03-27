@@ -118,17 +118,23 @@ module.exports = function(grunt) {
 					'public/dist/application.min.js': 'public/dist/application.js',
             	    'public/js/layout.server.view.1.min.js': 'public/js/layout.server.view.1.js',
             	    'public/js/layout.server.view.2.min.js': 'public/js/layout.server.view.2.js',
-            	    'public/js/layout.server.view.3.min.js': 'public/js/layout.server.view.3.js'
+            	    'public/js/layout.server.view.3.min.js': 'public/js/layout.server.view.3.js',
 				}
 			}
 		},
 		cssmin: {
 			combine: {
 				files: {
-					'public/dist/application.min.css': '<%= applicationCSSFiles %>',
-					'public/dist/vendor.min.css': '<%= vendorCSSFiles %>'
+					'public/css/layout.server.view.1.css': ['public/css/camera.css','public/css/contact-form.css','public/css/search-form.css','public/lib/font-awesome/css/font-awesome/css/font-awesome.min.css'],
 				}
-			}
+			},
+			minify: {
+			    expand: true,
+			    cwd: 'public/css/',
+			    src: ['.css', '!.min.css'],
+			    dest: 'public/css/',
+			    ext: '.min.css'
+			  }
 		},
 		concat: {
 		    dist: {
@@ -258,7 +264,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('lint', ['jshint', 'less', 'csslint']);
 
 	// Build task(s).
-	grunt.registerTask('build', ['lint', 'loadConfig', "ngtemplates", 'ngAnnotate', 'concat', 'uglify', 'cssmin']);
+	grunt.registerTask('build', ['lint', 'loadConfig', "ngtemplates", 'ngAnnotate', 'autoprefixer', 'concat', 'uglify', 'cssmin']);
 
 	// Test task.
 	grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);

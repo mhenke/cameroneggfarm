@@ -148,8 +148,6 @@
 	padding:0;
     text-align: center;
 	display:block;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 .camera_pag ul {
@@ -161,8 +159,6 @@
     width:100%;
 	display: block;
     padding:0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
     text-align:center;
 }
