@@ -56,10 +56,10 @@ module.exports = function(grunt) {
 		},
 		clean: {
 			prebuild: {
-		  		src: ['public/js/*', 'public/dist/*', 'public/img/*'],
+		  		src: ['public/dist/*', 'public/img/*', 'public/css/*'],
 			},
 			postbuild: {
-		  		src: ['public/js/*.js', '!public/js/*.min.js'],
+		  		src: ['public/css/*.css', '!public/css/*.min.css'],
 			},
 		},
 		jshint: {
@@ -127,6 +127,7 @@ module.exports = function(grunt) {
             	    'public/js/layout.server.view.1.min.js': 'public/js/layout.server.view.1.js',
             	    'public/js/layout.server.view.2.min.js': 'public/js/layout.server.view.2.js',
             	    'public/js/layout.server.view.3.min.js': 'public/js/layout.server.view.3.js',
+            	    'public/js/layout.server.view.4.min.js': 'public/js/layout.server.view.4.js',
 				}
 			}
 		},
@@ -140,9 +141,7 @@ module.exports = function(grunt) {
 			},
 			combine: {
 				files: {
-					'public/css/layout.server.view.1.min.css': ['public/css/camera.min.css','public/css/camera-overrides.min.css','public/css/contact-form.min.css','public/css/search-form.min.css','public/lib/font-awesome/css/font-awesome/css/font-awesome.min.css'],
-					//'public/css/layout.server.view.1.css': ['public/css/camera.css','public/css/camera-overrides.css','public/css/contact-form.css','public/css/search-form.css','public/lib/font-awesome/css/font-awesome/css/font-awesome.min.css'],
-					
+					'public/css/layout.server.view.1.min.css': ['assets/css/animate.css','assets/css/camera.css','assets/css/camera-overrides.css','public/css/contact-form.css','public/css/search-form.css','public/lib/font-awesome/css/font-awesome/css/font-awesome.min.css'],
 				}
 			}
 		},
@@ -155,7 +154,8 @@ module.exports = function(grunt) {
 		    	files: {
 		        	'public/js/layout.server.view.1.js': ['assets/js/jquery.js', 'assets/js/camera.min.js', 'assets/js/jquery.equalheights.js', 'assets/js/jquery.mobilemenu.js', 'assets/js/jquery.easing.1.3.js', 'assets/js/jquery-migrate-1.2.1.min.js'],
 			        'public/js/layout.server.view.2.js': ['assets/js/TMForm.js', 'assets/js/modal.js', 'public/lib/bootstrap-filestyle/src/bootstrap-filestyle.js'],
-			        'public/js/layout.server.view.3.js': ['public/lib/wow/dist/wow.min.js', 'assets/js/wow/device.min.js', 'assets/js/jquery.mobile.customized.min.js'],
+			        'public/js/layout.server.view.3.js': ['public/lib/wow/dist/wow.min.js', 'assets/js/wow/device.min.js', 'assets/js/js/stellar/jquery.stellar.js'],
+			        'public/js/layout.server.view.4.js': ['assets/js/bootstrap.min.js','assets/js/tm-scripts.js'],
 			        'public/dist/vendor.min.js': '<%= vendorJavaScriptFiles %>',
 			    },
 		    },
@@ -271,10 +271,10 @@ module.exports = function(grunt) {
 	grunt.registerTask('secure', ['env:secure', 'lint', 'concurrent:default']);
 
 	// Lint task(s).
-	grunt.registerTask('lint', ['jshint', 'less', 'csslint']);
+	grunt.registerTask('lint', ['jshint', 'autoprefixer', 'csslint']);
 
 	// Build task(s).
-	grunt.registerTask('build', ['clean:prebuild', 'imagemin', 'autoprefixer', 'lint', 'loadConfig', 'ngtemplates', 'ngAnnotate', 'concat', 'uglify', 'cssmin', 'clean:postbuild']);
+	grunt.registerTask('build', ['clean:prebuild', 'imagemin', 'lint', 'loadConfig', 'ngtemplates', 'ngAnnotate', 'concat', 'uglify', 'cssmin', 'clean:postbuild']);
 
 	// Test task.
 	grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);

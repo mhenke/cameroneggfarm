@@ -10,28 +10,36 @@
 <meta name="keywords" content="Your keywords">
 <meta name="author" content="Your name">
 <meta name = "format-detection" content = "telephone=no" />
-
 <!--CSS-->
-<link rel="stylesheet" href="css/bootstrap.min.css" >
-<link rel="stylesheet" href="css/style.min.css">
-<link rel="stylesheet" href="css/animate.min.css">
-<link rel="stylesheet" href="css/camera.min.css">
-<link rel="stylesheet" href="css/contact-form.min.css">
-<link rel="stylesheet" href="css/search-form.min.css">
+<link rel="stylesheet" href="css/bootstrap.css" >
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/camera.css">
+<link rel="stylesheet" href="css/contact-form.css">
+<link rel="stylesheet" href="css/search-form.css">
 <link rel="stylesheet" href="fonts/font-awesome.css">
-
 <!--JS-->
-<script src="js/layout.server.view.1.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.mobilemenu.js"></script>
+<script src="js/jquery.equalheights.js"></script> 
+<script src="js/camera.js"></script>
 <script src='//maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false'></script>
-<script src="js/layout.server.view.2.min.js"></script>
+<script src="js/TMForm.js"></script>
+<script src="js/modal.js"></script>  
+<script src="js/bootstrap-filestyle.js"></script> 
 <script>
     $(document).ready(function(){
         jQuery('.camera_wrap').camera();
     });
 </script>
 
+
 <!--[if (gt IE 9)|!(IE)]><!-->
-<script src="js/layout.server.view.3.min.js"></script>
+<script src="js/wow/wow.js"></script>
+<script src="js/wow/device.min.js"></script>
+<script src="js/jquery.mobile.customized.min.js"></script>
 <script>
     $(document).ready(function () {       
       if ($('html').hasClass('desktop')) {
@@ -101,8 +109,149 @@
     </div>
 </div>
 <!--content-->
-<div class="content indent">
-	{% block content %}{% endblock %}
+<div class="content"> 
+    <div class="thumb-box1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 wow fadeInUp">
+                    <div class="thumb-pad1">
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <h2>The best hens</h2>
+                                <p>Lorem ipsum do sit amet, consectetuer adipiscing elit. Pat vestibulum molestie lacus. Aenean nodrerit mauris. Phasellus porta. Fusce susc varius mi. Cum sociis natoque penatibumagnis dis parturient montes, nascetur ridiculus.</p>
+                                <figure><img src="img/page1_icon1.png" alt=""></figure>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="thumb-pad1">
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <h2>organic eggs</h2>
+                                <p>Lorem ipsum do sit amet, consectetuer adipiscing elit. Pat vestibulum molestie lacus. Aenean nodrerit mauris. Phasellus porta. Fusce susc varius mi. Cum sociis natoque penatibumagnis dis parturient montes, nascetur ridiculus.</p>
+                                <figure><img src="img//page1_icon2.png" alt=""></figure>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="thumb-pad1">
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <h2>our farms</h2>
+                                <p>Lorem ipsum do sit amet, consectetuer adipiscing elit. Pat vestibulum molestie lacus. Aenean nodrerit mauris. Phasellus porta. Fusce susc varius mi. Cum sociis natoque penatibumagnis dis parturient montes, nascetur ridiculus.</p>
+                                <figure><img src="img//page1_icon3.png" alt=""></figure>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <div class="thumb-box2">
+        <div class="container">
+            <h2>What they say</h2>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 wow fadeInUp">
+                    <p class="title"><em></em>Lorem ipsum dolor sit amet, consecr adipiscing elit. Praesent vestibulum molestie lacus. Aenean nonummy hendrerit.</p>
+                    <p class="name">Mike & Betty</p>
+                    <a href="#">Cum sociis natoque penatibus et magnis dis parturient montes....</a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <figure><img src="img//page1_pic1.jpg" alt=""></figure>
+                </div>
+            </div>
+            <hr>
+        </div>
+     </div>
+     <div class="thumb-box3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 wow fadeInUp">
+                    <h2>Contact us</h2>
+                    <h3>Fusce susc variu. Cum sociis natoque penatibu</h3>
+                    <p>Lorem ipsum do sit at, consectetuer adipiscing elit. Pat vestibulum molestie lacus. Aenean nodrerit mauris. Phasellus porta. Cum sociis natoque.</p>
+                </div>
+                <div class="col-lg-8">
+                    <form id="contact-form">
+                          <div class="contact-form-loader"></div>
+                          <fieldset>    
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <label class="name form-div-1">
+                                        <strong>First Name</strong>
+                                          <input type="text" name="name" placeholder="" value="" data-constraints="@Required @JustLetters"  />
+                                          <span class="empty-message">*This field is required.</span>
+                                          <span class="error-message">*This is not a valid name.</span>
+                                    </label>
+                                    <label class="name form-div-1">
+                                        <strong>Last Name</strong>
+                                          <input type="text" name="name" placeholder="" value="" data-constraints="@JustLetters"  />
+                                          <span class="empty-message">*This field is required.</span>
+                                      <span class="error-message">*This is not a valid name.</span>
+                                    </label>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <label class="email form-div-2">
+                                    <strong>Email Address</strong>
+                                      <input type="text" name="email" placeholder="" value="" data-constraints="@Required @Email" />
+                                      <span class="empty-message">*This field is required.</span>
+                                      <span class="error-message">*This is not a valid email.</span>
+                                    </label>
+                                    <label class="name form-div-1">
+                                        <strong>Subject</strong>
+                                          <input type="text" name="name" placeholder="" value="" data-constraints="@JustLetters"  />
+                                          <span class="empty-message">*This field is required.</span>
+                                      <span class="error-message">*This is not a valid subject.</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <label class="message form-div-4">
+                                <strong>Message:</strong>
+                                  <textarea name="message" placeholder="" data-constraints='@Required @Length(min=20,max=999999)'></textarea>
+                                  <span class="empty-message">*This field is required.</span>
+                                  <span class="error-message">*The message is too short.</span>
+                            </label>
+                            <!-- <label class="recaptcha"><span class="empty-message">*This field is required.</span></label> -->
+                            <div class="btns">
+                                <a href="#" data-type="submit" class="btn-default btn2">Send</a>
+                            </div>
+                          </fieldset> 
+                          <div class="modal fade response-message">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                  <h4 class="modal-title">Modal title</h4>
+                                </div>
+                                <div class="modal-body">
+                                  You message has been sent! We will be in touch soon.
+                                </div>      
+                              </div>
+                            </div>
+                          </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        </div>
+     </div>
+     <div class="thumb-box4">
+        <div class="container">
+            <ul class="list1">
+                <li class="wow zoomIn" data-wow-delay="0.4s"><a href="#"><img src="img//page1_company1.png" alt=""></a></li>
+                <li class="wow zoomIn" data-wow-delay="0.3s"><a href="#"><img src="img//page1_company2.png" alt=""></a></li>
+                <li class="wow zoomIn" data-wow-delay="0.2s"><a href="#"><img src="img//page1_company3.png" alt=""></a></li>
+                <li class="wow zoomIn" data-wow-delay="0.1s"><a href="#"><img src="img//page1_company4.png" alt=""></a></li>
+                <li class="wow zoomIn" data-wow-delay="0.1s"><a href="#"><img src="img//page1_company5.png" alt=""></a></li>
+                <li class="wow zoomIn" data-wow-delay="0.2s"><a href="#"><img src="img//page1_company6.png" alt=""></a></li>
+                <li class="wow zoomIn" data-wow-delay="0.3s"><a href="#"><img src="img//page1_company7.png" alt=""></a></li>
+                <li class="wow zoomIn" data-wow-delay="0.4s"><a href="#"><img src="img//page1_company8.png" alt=""></a></li>
+            </ul>
+        </div>
+     </div>
 </div>
 <!--footer-->
 <footer>
@@ -325,12 +474,5 @@
 
           }    
 </script>
-    <!--Application JavaScript Files-->
-	{% for jsFile in jsFiles %}<script type="text/javascript" src="{{jsFile}}"></script>{% endfor %} 
-
-	{% if process.env.NODE_ENV === 'development' %}
-	<!--Livereload script rendered -->
-	<script type="text/javascript" src="http://{{request.hostname}}:35729/livereload.js"></script>
-	{% endif %}
 </body>
 </html>
