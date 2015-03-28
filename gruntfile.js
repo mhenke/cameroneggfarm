@@ -54,6 +54,14 @@ module.exports = function(grunt) {
                 tasks: ['less']
             }
 		},
+		clean: {
+			prebuild: {
+		  		src: ['public/js/*', 'public/dist/*', 'public/img/*'],
+			},
+			postbuild: {
+		  		src: ['public/js/*.js', '!public/js/*.min.js'],
+			},
+		},
 		jshint: {
 			all: {
 				src: watchFiles.clientJS.concat(watchFiles.serverJS),
@@ -101,7 +109,7 @@ module.exports = function(grunt) {
 		      },
 		      files: [{
 		         expand: true,
-		         cwd: 'public/img',
+		         cwd: 'assets/img',
 		         src: ['**/*.{png,jpg,gif}'],
 		         dest: 'public/img'
 		      }]
@@ -133,6 +141,8 @@ module.exports = function(grunt) {
 			combine: {
 				files: {
 					'public/css/layout.server.view.1.min.css': ['public/css/camera.min.css','public/css/camera-overrides.min.css','public/css/contact-form.min.css','public/css/search-form.min.css','public/lib/font-awesome/css/font-awesome/css/font-awesome.min.css'],
+					//'public/css/layout.server.view.1.css': ['public/css/camera.css','public/css/camera-overrides.css','public/css/contact-form.css','public/css/search-form.css','public/lib/font-awesome/css/font-awesome/css/font-awesome.min.css'],
+					
 				}
 			}
 		},
@@ -196,13 +206,13 @@ module.exports = function(grunt) {
                     removeComments: true
                 },
                 url: function(url) {
-                    return url.replace("public", "assets");
+                    return url.replace('public', 'assets');
                 },
-                prefix: "/"
+                prefix: '/'
             },
-            "meanjs-template": {
-                src: "public/modules/**/**.html",
-                dest: "public/dist/templates.js"
+            'meanjs-template': {
+                src: 'public/modules/**/**.html',
+                dest: 'public/dist/templates.js'
             }
         },
 		concurrent: {
@@ -264,7 +274,7 @@ module.exports = function(grunt) {
 	grunt.registerTask('lint', ['jshint', 'less', 'csslint']);
 
 	// Build task(s).
-	grunt.registerTask('build', [ 'autoprefixer', 'lint', 'loadConfig', "ngtemplates", 'ngAnnotate', 'concat', 'uglify', 'cssmin']);
+	grunt.registerTask('build', ['clean:prebuild', 'imagemin', 'autoprefixer', 'lint', 'loadConfig', 'ngtemplates', 'ngAnnotate', 'concat', 'uglify', 'cssmin', 'clean:postbuild']);
 
 	// Test task.
 	grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
