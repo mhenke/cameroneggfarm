@@ -1,10 +1,10 @@
 'use strict';
 
 module.exports = {
-	db: 'mongodb://localhost/cameronfresheggs-test',
+	db: 'mongodb://localhost/cameroneggfarm-test',
 	port: 3001,
 	app: {
-		title: 'cameronfresheggs - Test Environment'
+		title: 'cameroneggfarm - Test Environment'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',

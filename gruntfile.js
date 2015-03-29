@@ -6,10 +6,9 @@ module.exports = function(grunt) {
 		serverViews: ['app/views/**/*.*'],
 		serverJS: ['gruntfile.js', 'server.js', 'config/**/*.js', 'app/**/*.js'],
 		clientViews: ['public/modules/**/views/**/*.html'],
-		clientJS: ['public/js/*.js', 'public/modules/**/*.js','assets/js/**/*.js'],
-		clientCSS: ['public/modules/**/*.css','assets/css/**/*.css'],
-		mochaTests: ['app/tests/**/*.js'],
-		clientLess: ['public/modules/**/*.less']
+		clientJS: ['public/js/*.js', 'public/modules/**/*.js'],
+		clientCSS: ['public/modules/**/*.css'],
+		mochaTests: ['app/tests/**/*.js']
 	};
 
 	// Project Configuration
@@ -48,19 +47,7 @@ module.exports = function(grunt) {
 				options: {
 					livereload: true
 				}
-			},
-            clientLess: {
-                files: watchFiles.clientLess,
-                tasks: ['less']
-            }
-		},
-		clean: {
-			prebuild: {
-		  		src: ['public/dist/*', 'public/img/*', 'public/css/*'],
-			},
-			postbuild: {
-		  		src: ['public/css/*.css', '!public/css/*.min.css'],
-			},
+			}
 		},
 		jshint: {
 			all: {
@@ -75,99 +62,25 @@ module.exports = function(grunt) {
 				csslintrc: '.csslintrc',
 			},
 			all: {
-				src:  ['public/modules/**/*.css','public/css/*.css']
+				src: watchFiles.clientCSS
 			}
-		},
-		less: {
-		    development: {
-		       options: {
-		          compress: true,
-		          yuicompress: true,
-		          optimization: 2
-		        },
-		        files: [{
-		            src: ['assets/less/style.less', 'assets/less/theme.less', 'public/modules/**/*.less'],
-		            dest: 'public/modules/core/css/core.css'
-		        }]
-		    },
-		    production: {
-		        options: {
-                  compress: true,
-		          yuicompress: true,
-		          optimization: 2
-		        },
-		        files: [{
-		            src: ['assets/less/style.less', 'assets/less/theme.less', 'public/modules/**/*.less'],
-		            dest: 'public/modules/core/css/core.css'
-		        }]
-			}
-		},
-		imagemin: {
-		   dist: {
-		      options: {
-		        optimizationLevel: 5
-		      },
-		      files: [{
-		         expand: true,
-		         cwd: 'assets/img',
-		         src: ['**/*.{png,jpg,gif}'],
-		         dest: 'public/img'
-		      }]
-		   }
 		},
 		uglify: {
 			production: {
 				options: {
-					mangle: true,
-            		compress: false,
-					sourceMap: true
+					mangle: false
 				},
 				files: {
-					'public/dist/application.min.js': 'public/dist/application.js',
-            	    'public/js/layout.server.view.1.min.js': 'public/js/layout.server.view.1.js',
-            	    'public/js/layout.server.view.2.min.js': 'public/js/layout.server.view.2.js',
-            	    'public/js/layout.server.view.3.min.js': 'public/js/layout.server.view.3.js',
-            	    'public/js/layout.server.view.4.min.js': 'public/js/layout.server.view.4.js',
+					'public/dist/application.min.js': 'public/dist/application.js'
 				}
 			}
 		},
 		cssmin: {
-			minify: {
-			    expand: true,
-			    cwd: 'public/css/',
-			    src: ['*.css', '!.min.css'],
-			    dest: 'public/css/',
-			    ext: '.min.css'
-			},
 			combine: {
 				files: {
-					'public/css/layout.server.view.1.min.css': ['assets/css/animate.css','assets/css/camera.css','assets/css/camera-overrides.css','public/css/contact-form.css','public/css/search-form.css','public/lib/font-awesome/css/font-awesome/css/font-awesome.min.css'],
+					'public/dist/application.min.css': '<%= applicationCSSFiles %>'
 				}
 			}
-		},
-		concat: {
-		    dist: {
-		    	  options: {
-			      	separator: ';',
-		            stripBanners: true
-			    },
-		    	files: {
-		        	'public/js/layout.server.view.1.js': ['assets/js/jquery.js', 'assets/js/camera.min.js', 'assets/js/jquery.equalheights.js', 'assets/js/jquery.mobilemenu.js', 'assets/js/jquery.easing.1.3.js', 'assets/js/jquery-migrate-1.2.1.min.js'],
-			        'public/js/layout.server.view.2.js': ['assets/js/TMForm.js', 'assets/js/modal.js', 'public/lib/bootstrap-filestyle/src/bootstrap-filestyle.js'],
-			        'public/js/layout.server.view.3.js': ['public/lib/wow/dist/wow.min.js', 'assets/js/wow/device.min.js', 'assets/js/js/stellar/jquery.stellar.js'],
-			        'public/js/layout.server.view.4.js': ['assets/js/bootstrap.min.js','assets/js/tm-scripts.js'],
-			        'public/dist/vendor.min.js': '<%= vendorJavaScriptFiles %>',
-			    },
-		    },
-		  },
-		autoprefixer: {
-			 // prefix all files
-		    multiple_files: {
-		      expand: true,
-		      flatten: true,
-		      src: 'assets/css/*.css', // 'public/modules/**/*.css'
-		      dest: 'public/css/' // 'public/modules/**/*.css'
-		    },
 		},
 		nodemon: {
 			dev: {
@@ -199,22 +112,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-		 ngtemplates: {
-            options: {
-                htmlmin: {
-                    collapseWhitespace: true,
-                    removeComments: true
-                },
-                url: function(url) {
-                    return url.replace('public', 'assets');
-                },
-                prefix: '/'
-            },
-            'meanjs-template': {
-                src: 'public/modules/**/**.html',
-                dest: 'public/dist/templates.js'
-            }
-        },
 		concurrent: {
 			default: ['nodemon', 'watch'],
 			debug: ['nodemon', 'watch', 'node-inspector'],
@@ -247,8 +144,7 @@ module.exports = function(grunt) {
 
 	// Load NPM tasks
 	require('load-grunt-tasks')(grunt);
-	
-	
+
 	// Making grunt default to force in order not to break the project.
 	grunt.option('force', true);
 
@@ -271,10 +167,10 @@ module.exports = function(grunt) {
 	grunt.registerTask('secure', ['env:secure', 'lint', 'concurrent:default']);
 
 	// Lint task(s).
-	grunt.registerTask('lint', ['jshint', 'autoprefixer', 'csslint']);
+	grunt.registerTask('lint', ['jshint', 'csslint']);
 
 	// Build task(s).
-	grunt.registerTask('build', ['clean:prebuild', 'imagemin', 'lint', 'loadConfig', 'ngtemplates', 'ngAnnotate', 'concat', 'uglify', 'cssmin', 'clean:postbuild']);
+	grunt.registerTask('build', ['lint', 'loadConfig', 'ngAnnotate', 'uglify', 'cssmin']);
 
 	// Test task.
 	grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
