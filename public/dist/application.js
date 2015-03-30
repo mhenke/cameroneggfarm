@@ -99,14 +99,6 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 ]);
 'use strict';
 
-angular.module('core').controller('WhereToBuyController', ['$scope',
-	function($scope) {
-		// Controller Logic
-		// ...
-	}
-]);
-'use strict';
-
 //Menu service used for managing  menus
 angular.module('core').service('Menus', [
 
