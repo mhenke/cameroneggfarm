@@ -378,7 +378,7 @@ angular.module('users').config(['$stateProvider',
 			templateUrl: 'modules/users/views/settings/social-accounts.client.view.html'
 		}).
 		state('signup', {
-			url: '/signup3',
+			url: '/signup',
 			templateUrl: 'modules/users/views/authentication/signup.client.view.html'
 		}).
 		state('signin', {
