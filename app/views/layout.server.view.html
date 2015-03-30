@@ -35,8 +35,7 @@
             jQuery('.camera_wrap').camera();
         });
     </script>
-
-
+    
     <!--[if (gt IE 9)|!(IE)]><!-->
     <script src="js/wow/wow.js"></script>
     <script src="js/wow/device.min.js"></script>
@@ -66,7 +65,8 @@
 <body>
     <!--header-->
     <div class="main">
-        <header class="indent clearfix">
+        <!-- <header data-ng-include="'/modules/core/views/header.client.view.html'" class="indent clearfix"> -->
+        <header  data-ng-include="'/modules/core/views/header.client.view.html'" class="indent clearfix">
             <h1 class="navbar-brand navbar-brand_ wow fadeInLeft" data-wow-delay="0.2s"><a href="index.html"><img src="img/logo.png" alt="logo"></a></h1>
             <div class="js-search flt__l flt__n-xl">
                 <div class="toggle"></div>
@@ -115,6 +115,7 @@
             </nav>
         </header>
     </div>
+    <!--  data-ng-include="'/modules/core/views/slider.client.view.html'" -->
     <div class="slider">
         <div class="camera_wrap">
             <div data-src="img/picture1.jpg">
@@ -144,28 +145,13 @@
         </div>
     </div>
     <!--content-->
-    <div class="content">
+    <div class="content"> <!-- indent class for not home page -->
         {% block content %}{% endblock %}
     </div>
     <!--footer-->
-    <footer>
-        <div class="container">
-            <ul class="follow_icon wow fadeInDown">
-                <li>
-                    <a href="#" class="fa fa-twitter"></a>
-                </li>
-                <li>
-                    <a href="#" class="fa fa-facebook"></a>
-                </li>
-                <li>
-                    <a href="#" class="fa fa-google-plus"></a>
-                </li>
-            </ul>
-            <hr class="wow zoomIn">
-            <p class="wow fadeInUp">Cameron Egg Farm &copy; <em id="copyright-year"></em> <a href="index-5.html">Privacy Policy</a>. Terms of use</p>
-        </div>
-        More Poultry Farm Website Templates at <a rel="nofollow" href="http://www.templatemonster.com/category/poultry-farm-website-templates/" target="_blank">TemplateMonster.com</a>
+    <footer data-ng-include="'/modules/core/views/footer.client.view.html'">
     </footer>
+    
     <section class="content_map">
         <div class="google-map-api">
             <div id="map-canvas" class="gmap"></div>

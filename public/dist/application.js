@@ -270,6 +270,10 @@ angular.module('main').config(['$stateProvider',
 	function($stateProvider) {
 		// Main state routing
 		$stateProvider.
+		state('privacy-policy', {
+			url: '/privacy-policy',
+			templateUrl: 'modules/main/views/privacy-policy.client.view.html'
+		}).
 		state('where-to-buy', {
 			url: '/where-to-buy',
 			templateUrl: 'modules/main/views/where-to-buy.client.view.html'
@@ -299,6 +303,14 @@ angular.module('main').controller('AboutUsController', ['$scope',
 'use strict';
 
 angular.module('main').controller('ContactsController', ['$scope',
+	function($scope) {
+		// Controller Logic
+		// ...
+	}
+]);
+'use strict';
+
+angular.module('main').controller('PrivacyPolicyController', ['$scope',
 	function($scope) {
 		// Controller Logic
 		// ...

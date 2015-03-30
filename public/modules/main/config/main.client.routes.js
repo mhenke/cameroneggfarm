@@ -5,6 +5,10 @@ angular.module('main').config(['$stateProvider',
 	function($stateProvider) {
 		// Main state routing
 		$stateProvider.
+		state('privacy-policy', {
+			url: '/privacy-policy',
+			templateUrl: 'modules/main/views/privacy-policy.client.view.html'
+		}).
 		state('where-to-buy', {
 			url: '/where-to-buy',
 			templateUrl: 'modules/main/views/where-to-buy.client.view.html'
