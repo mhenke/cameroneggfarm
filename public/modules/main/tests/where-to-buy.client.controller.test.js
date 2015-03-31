@@ -1,8 +1,8 @@
 'use strict';
 
 (function() {
-	// Where to buy Controller Spec
-	describe('Where to buy Controller Tests', function() {
+	// Where To Buy Controller Spec
+	describe('Where To Buy Controller Tests', function() {
 		// Initialize global variables
 		var WhereToBuyController,
 			scope,
@@ -44,7 +44,7 @@
 			$httpBackend = _$httpBackend_;
 			$location = _$location_;
 
-			// Initialize the Where to buy controller.
+			// Initialize the Where To Buy controller.
 			WhereToBuyController = $controller('WhereToBuyController', {
 				$scope: scope
 			});

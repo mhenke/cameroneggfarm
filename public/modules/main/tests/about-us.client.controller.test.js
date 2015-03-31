@@ -1,8 +1,8 @@
 'use strict';
 
 (function() {
-	// About us Controller Spec
-	describe('About us Controller Tests', function() {
+	// About Us Controller Spec
+	describe('About Us Controller Tests', function() {
 		// Initialize global variables
 		var AboutUsController,
 			scope,
@@ -44,7 +44,7 @@
 			$httpBackend = _$httpBackend_;
 			$location = _$location_;
 
-			// Initialize the About us controller.
+			// Initialize the About Us controller.
 			AboutUsController = $controller('AboutUsController', {
 				$scope: scope
 			});
