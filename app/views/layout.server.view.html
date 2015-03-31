@@ -131,7 +131,7 @@
     <footer data-ng-include="'/modules/core/views/footer.client.view.html'">
     </footer>
 
-    <section class="content_map">
+    <section class="content_map" ng-show="$state.includes('home')">
         <div class="google-map-api">
             <div id="map-canvas" class="gmap"></div>
         </div>
