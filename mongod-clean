@@ -1,0 +1,2 @@
+mongod --repair
+rm /home/ubuntu/workspace/data/mongod.lock
