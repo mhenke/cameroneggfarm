@@ -91,7 +91,7 @@
     <!--header-->
     <div class="main">
         <header class="clearfix" data-ng-class="{indent: state.current.name === 'home'}">
-            <h1 class="navbar-brand navbar-brand_ wow fadeInLeft" data-wow-delay="0.2s"><a data-ng-href="/#!/"><img src="img/logo.png" alt="logo"></a></h1>
+            <h1 class="navbar-brand navbar-brand_ wow fadeInLeft" data-wow-delay="0.2s"><a href="/#!/"><img src="img/logo.png" alt="logo"></a></h1>
             <div class="js-search flt__l flt__n-xl">
                 <div class="toggle"></div>
                 <form id="search" class="search-form" action="search.php" method="GET" accept-charset="utf-8">
@@ -103,7 +103,7 @@
             </div>
             <nav class="navbar navbar-default navbar-static-top tm_navbar clearfix wow fadeInDown" role="navigation">
                 <ul class="nav sf-menu clearfix">
-                    <li data-ng-class="{active: state.current.name === 'home'}"><a data-ng-href="/#!/">Home</a>
+                    <li data-ng-class="{active: state.current.name === 'home'}"><a href="/#!/">Home</a>
                     </li>
                     <li data-ng-class="{active: state.current.name === 'about-us'}"><a href="/#!/about-us">About Us</a>
                     </li>
@@ -173,6 +173,7 @@
             <div id="map-canvas" class="gmap"></div>
         </div>
     </section>
+
     <script src="js/bootstrap.min.js"></script>
     <script src="js/tm-scripts.js"></script>
     <script type="text/javascript">
