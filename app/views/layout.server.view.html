@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title data-ng-bind="pageTitle">{{description}}</title>
+<head data-ng-controller="HeaderController">
+    <title>{{title}}</title>
 
     <!-- General META -->
     <meta charset="utf-8">
@@ -87,7 +87,7 @@
   <![endif]-->
 </head>
 
-<body data-ng-controller="HeaderController" >
+<body class="ng-cloak" data-ng-controller="HeaderController">
     <!--header-->
     <div class="main">
         <header class="clearfix" data-ng-class="{indent: state.current.name === 'home'}">

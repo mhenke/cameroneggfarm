@@ -8,7 +8,7 @@ function include(url){
 //year sccript
 
 var currentYear = (new Date).getFullYear();
-$(document).ready(function() {
+$(function () {
 $("#copyright-year").text( (new Date).getFullYear() );
 });
 
@@ -42,7 +42,7 @@ $(function () {
 /* Stellar.js
 ========================================================*/
 include('stellar/jquery.stellar.js');
-$(document).ready(function() { 
+$(function () {
   if ($('html').hasClass('desktop')) {
       $.stellar({
         horizontalScrolling: false,
