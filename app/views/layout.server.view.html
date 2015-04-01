@@ -87,7 +87,7 @@
   <![endif]-->
 </head>
 
-<body class="ng-cloak" data-ng-controller="HeaderController">
+<body data-ng-controller="HeaderController" ng-cloak class="ng-cloak">
     <!--header-->
     <div class="main">
         <header class="clearfix" data-ng-class="{indent: state.current.name === 'home'}">
@@ -145,7 +145,7 @@
         </div>
     </div>
     <!--content-->
-    <div class="content" data-ng-class="{indent: state.current.name !== 'home'}">
+    <div class="content" data-ng-class="{indent: state.current.name !== 'home'}" ng-cloak class="ng-cloak">
         <!-- indent class for not home page -->
         {% block content %}{% endblock %}
     </div>
