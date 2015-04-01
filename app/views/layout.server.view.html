@@ -145,12 +145,28 @@
         </div>
     </div>
     <!--content-->
-    <div class="content" data-ng-class="{indent: state.current.name !== 'home'}" ng-cloak class="ng-cloak">
+    <div class="content ng-cloak" data-ng-class="{indent: state.current.name !== 'home'}" ng-cloak>
         <!-- indent class for not home page -->
         {% block content %}{% endblock %}
     </div>
     <!--footer-->
-    <footer data-ng-include="'/modules/core/views/footer.client.view.html'"></footer>
+    <footer>
+        <div class="container" ng-cloak class="ng-cloak">
+            <ul class="follow_icon wow fadeInDown">
+                <li>
+                    <a href="#" class="fa fa-twitter"></a>
+                </li>
+                <li>
+                    <a href="#" class="fa fa-facebook"></a>
+                </li>
+                <li>
+                    <a href="#" class="fa fa-google-plus"></a>
+                </li>
+            </ul>
+            <hr class="wow zoomIn">
+            <p class="wow fadeInUp">Cameron Egg Farm &copy; <em id="copyright-year"></em> <a ui-sref="privacy-policy">Privacy Policy</a>. Terms of use</p>
+        </div>
+    </footer>
 
     <section class="content_map" ng-show="state.current.name === 'home'">
         <div class="google-map-api">
