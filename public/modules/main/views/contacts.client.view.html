@@ -22,55 +22,7 @@
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-8">
                     <h2 class="wow fadeInDown" data-wow-delay="0.1s">contact form</h2>
-                    <div class="contactForm2">
-                    <form id="contact-form">
-                          <div class="contact-form-loader"></div>
-                          <fieldset>
-                            <label class="name form-div-1">
-                            <strong>Name*</strong>
-                              <input type="text" name="name" placeholder="" value="" data-constraints="@Required @JustLetters"  />
-                              <span class="empty-message">*This field is required.</span>
-                              <span class="error-message">*This is not a valid name.</span>
-                            </label>
-                            <label class="email form-div-2">
-                            <strong>E-mail*</strong>
-                              <input type="text" name="email" placeholder="" value="" data-constraints="@Required @Email" />
-                              <span class="empty-message">*This field is required.</span>
-                              <span class="error-message">*This is not a valid email.</span>
-                            </label>
-                            <label class="phone form-div-3">
-                            <strong>Phone</strong>
-                              <input type="text" name="phone" placeholder="" value="" data-constraints="@JustNumbers" />
-                              <span class="empty-message">*This field is required.</span>
-                              <span class="error-message">*This is not a valid phone.</span>
-                            </label>
-                            <label class="message form-div-4">
-                            <strong>Message*</strong>
-                              <textarea name="message" placeholder="" data-constraints='@Length(min=20,max=999999)'></textarea>
-                              <span class="empty-message">*This field is required.</span>
-                              <span class="error-message">*The message is too short.</span>
-                            </label>
-                            <!-- <label class="recaptcha"><span class="empty-message">*This field is required.</span></label> -->
-                            <div class="btns">
-                                <a href="#" data-type="submit" class="btn-default btn2">submit</a>
-                                <p>* required fields</p>
-                            </div>
-                          </fieldset> 
-                          <div class="modal fade response-message">
-                            <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                  <h4 class="modal-title">Modal title</h4>
-                                </div>
-                                <div class="modal-body">
-                                  You message has been sent! We will be in touch soon.
-                                </div>      
-                              </div>
-                            </div>
-                          </div>
-                    </form>
-                    </div>
+                    <ng-include src="'/modules/core/views/contact.client.view.html'"></ng-include>
                 </div>
             </div>
         </div>
