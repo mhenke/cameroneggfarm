@@ -1,4 +1,4 @@
-<div class="contactForm2 ng-cloak" ng-cloak>
+<div ng-controller="ContactController" ng-submit="submit(contactform)" name="contactform" method="post" action="" class="contactForm2 ng-cloak" ng-cloak>
     <form id="contact-form">
         <div class="contact-form-loader"></div>
         <fieldset>
@@ -32,18 +32,6 @@
                 <p>* required fields</p>
             </div>
         </fieldset>
-        <div class="modal fade response-message">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Modal title</h4>
-                    </div>
-                    <div class="modal-body">
-                        You message has been sent! We will be in touch soon.
-                    </div>
-                </div>
-            </div>
-        </div>
+        <p ng-class="result" style="padding: 15px; margin: 0;">{{ resultMessage }}</p>
     </form>
 </div>
