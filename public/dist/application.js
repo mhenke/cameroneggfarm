@@ -186,6 +186,37 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 ]);
 'use strict';
 
+angular.module('main').controller('ContactFormController', ['$scope',
+	function($scope) {
+		$scope.result = 'hidden'
+		$scope.resultMessage = 'Hi mike';
+		$scope.formData; //formData is an object holding the name, email, subject, and message
+		$scope.submitButtonDisabled = false;
+		$scope.submitted = false; //used so that form errors are shown only after the form has been submitted
+
+		$scope.submit = function() {
+			var sendgrid = require('sendgrid')(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD);
+			sendgrid.send({
+				to: 'henke.mike@gmail.com',
+				from: 'henke.mike@gmail.com',
+				subject: 'Hello World',
+				text: 'My first email through SendGrid.'
+			}, function(err, json) {
+				if (err) {
+					$scope.resultMessage = err;
+					$scope.result = '';
+					return console.error(err);
+				}
+				$scope.resultMessage = 'Congrats.';
+				$scope.result = '';
+				console.log(json);
+			});
+		};
+	}
+]);
+
+'use strict';
+
 angular.module('core').controller('HeaderController', ['$state', '$scope', 'Authentication', 'Menus',
 	function($state, $scope, Authentication, Menus) {
 		$scope.authentication = Authentication;
@@ -207,11 +238,39 @@ angular.module('core').controller('HeaderController', ['$state', '$scope', 'Auth
 ]);
 'use strict';
 
-
 angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 	function($scope, Authentication) {
 		// This provides Authentication context.
 		$scope.authentication = Authentication;
+	}
+]);
+'use strict';
+
+angular.module('core').factory('Email', [
+	function() {
+		// Email service logic
+		this.sendEmail = function(menuId) {
+			var sendgrid = require('sendgrid')(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD);
+			sendgrid.send({
+				to: 'example@example.com',
+				from: 'other@example.com',
+				subject: 'Hello World',
+				text: 'My first email through SendGrid.'
+			}, function(err, json) {
+				if (err) {
+					return console.error(err);
+				}
+				console.log(json);
+			});
+			return false;
+		};
+
+		// Public API
+		return {
+			someMethod: function() {
+				return true;
+			}
+		};
 	}
 ]);
 'use strict';
