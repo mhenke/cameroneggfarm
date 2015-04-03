@@ -1,6 +1,5 @@
 'use strict';
 
-
 angular.module('main').controller('ContactFormController', ['$scope', '$http',
 	function($scope, $http) {
 		$scope.submit = function(contactForm) {
@@ -12,7 +11,7 @@ angular.module('main').controller('ContactFormController', ['$scope', '$http',
 			$scope.submit = function(contactform) {
 				$scope.submitted = true;
 				$scope.submitButtonDisabled = true;
-				if (contactform.$valid) {
+				if ($scope.contactform.$valid) {
 					$http({
 						method: 'POST',
 						url: 'contact-form.php',
