@@ -1,9 +1,10 @@
 'use strict';
 
-angular.module('main').controller('ContactFormController', ['$scope', '$http',
-	function($scope, $http) {
+angular.module('core').controller('ContactFormController', ['$scope', '$http', 'Email',
+	function($scope, $http, Email) {
+		$scope.email = Email;
 		$scope.submit = function(contactForm) {
-			$scope.result = 'hidden'
+			$scope.result = 'hidden';
 			$scope.resultMessage;
 			$scope.formData; //formData is an object holding the name, email, subject, and message
 			$scope.submitButtonDisabled = false;
@@ -11,34 +12,8 @@ angular.module('main').controller('ContactFormController', ['$scope', '$http',
 			$scope.submit = function(contactform) {
 				$scope.submitted = true;
 				$scope.submitButtonDisabled = true;
-				if ($scope.contactform.$valid) {
-					$http({
-						method: 'POST',
-						url: 'contact-form.php',
-						data: $.param($scope.formData), //param method from jQuery
-						headers: {
-							'Content-Type': 'application/x-www-form-urlencoded'
-						} //set the headers so angular passing info as form data (not request payload)
-					}).success(function(data) {
-						console.log(data);
-						if (data.success) { //success comes from the return json object
-							$scope.submitButtonDisabled = true;
-							$scope.resultMessage = data.message;
-							$scope.result = 'bg-success';
-						}
-						else {
-							$scope.submitButtonDisabled = false;
-							$scope.resultMessage = data.message;
-							$scope.result = 'bg-danger';
-						}
-					});
-				}
-				else {
-					$scope.submitButtonDisabled = false;
-					$scope.resultMessage = 'Failed <img src="http://www.chaosm.net/blog/wp-includes/images/smilies/icon_sad.gif" alt=":(" class="wp-smiley">  Please fill out all the fields.';
-					$scope.result = 'bg-danger';
-				}
-			}
+				
+			};
 		};
 	}
 ]);

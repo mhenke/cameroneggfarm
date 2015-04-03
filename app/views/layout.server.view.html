@@ -87,7 +87,7 @@
   <![endif]-->
 </head>
 
-<body data-ng-controller="HeaderController" ng-cloak class="ng-cloak">
+<body data-ng-controller="HeaderController">
     <!--header-->
     <div class="main">
         <header class="clearfix" data-ng-class="{indent: state.current.name === 'home'}">
@@ -145,13 +145,13 @@
         </div>
     </div>
     <!--content-->
-    <div class="content ng-cloak" data-ng-class="{indent: state.current.name !== 'home'}" ng-cloak>
+    <div class="content" data-ng-class="{indent: state.current.name !== 'home'}">
         <!-- indent class for not home page -->
         {% block content %}{% endblock %}
     </div>
     <!--footer-->
     <footer>
-        <div class="container" ng-cloak class="ng-cloak">
+        <div class="container">
             <ul class="follow_icon wow fadeInDown">
                 <li>
                     <a href="#" class="fa fa-twitter"></a>

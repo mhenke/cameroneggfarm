@@ -8,7 +8,7 @@ var email = require('../../app/controllers/email.server.controller');
 module.exports = function(app) {
 	// Root routing
 	var core = require('../../app/controllers/core.server.controller');
-	app.route('/').get(core.index);
+	app.route('/').get(core.index,email.send);
 	
 		// Article Routes
 	app.route('/email')

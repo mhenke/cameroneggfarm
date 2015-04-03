@@ -1,4 +1,4 @@
-<div ng-controller="ContactFormController" class="contactForm2 ng-cloak" ng-cloak>
+<div ng-controller="ContactFormController" class="contactForm2">
     <form id="contactform" ng-submit="submit(contactform)" name="contactform" novalidate>
         <div class="contactform-loader"></div>
         <fieldset>
@@ -28,7 +28,7 @@
             </label>
             <!-- <label class="recaptcha"><span class="empty-message">*This field is required.</span></label> -->
             <div class="btns">
-                <input type="submit" class="btn-default btn2" value="send" ng-disabled="submitButtonDisabled">
+                <button type="submit" class="btn-default btn2" ng-disabled="submitButtonDisabled">send</button>
                 <p>* required fields</p>
             </div>
         </fieldset>
