@@ -13,7 +13,7 @@ exports.send = function(req, res) {
 		to: 'henke.mike@gmail.com',
 		from: 'henke.mike@gmail.com',
 		subject: 'Hello World',
-		text: 'My first email through SendGrid.'
+		text: 'My first email through SendGrid from c9.'
 	}, function(err, json) {
 		if (err) {
 			return console.error(err);

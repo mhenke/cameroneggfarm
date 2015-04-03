@@ -4,7 +4,7 @@ angular.module('core').factory('Email', [
 	function() {
 		// Email service logic
 		this.sendEmail = function(menuId) {
-			var sendgrid = require('sendgrid')(process.env.SENDGRID_USERNAME, process.env.SENDGRID_PASSWORD);
+			//var sendgrid = require('sendgrid')('aa', 'aa');
 			sendgrid.send({
 				to: 'example@example.com',
 				from: 'other@example.com',
@@ -17,13 +17,6 @@ angular.module('core').factory('Email', [
 				console.log(json);
 			});
 			return false;
-		};
-
-		// Public API
-		return {
-			someMethod: function() {
-				return true;
-			}
 		};
 	}
 ]);

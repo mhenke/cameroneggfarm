@@ -1,38 +1,37 @@
 <div ng-controller="ContactFormController" class="contactForm2 ng-cloak" ng-cloak>
-    <form id="contact-form" ng-submit="submit(contactform)" name="contactform" novalidate>
+    <form id="contact-form" ng-submit="submit(contactform)" name="contactform">
         <div class="contact-form-loader"></div>
         <fieldset>
             <label class="name form-div-1">
                 <strong>Name<span style="color:#fb641d">*</span></strong>
-                <input type="text" name="name" placeholder="" value="" data-constraints="@Required @JustLetters" />
+                <input type="text" ng-model="formData.name" name="name" placeholder="" value="" data-constraints="@Required @JustLetters" />
                 <span class="empty-message">*This field is required.</span>
                 <span class="error-message">*This is not a valid name.</span>
             </label>
             <label class="email form-div-2">
                 <strong>E-mail<span style="color:#fb641d">*</span></strong>
-                <input type="text" name="email" placeholder="" value="" data-constraints="@Required @Email" />
+                <input type="text" ng-model="formData.email" name="email" placeholder="" value="" data-constraints="@Required @Email" />
                 <span class="empty-message">*This field is required.</span>
                 <span class="error-message">*This is not a valid email.</span>
             </label>
             <label class="phone form-div-3">
                 <strong>Phone</strong>
-                <input type="text" name="phone" placeholder="" value="" data-constraints="@JustNumbers" />
+                <input type="text" ng-model="formData.phone" name="phone" placeholder="" value="" data-constraints="@JustNumbers" />
                 <span class="empty-message">*This field is required.</span>
                 <span class="error-message">*This is not a valid phone.</span>
             </label>
             <label class="message form-div-4">
                 <strong>Message<span style="color:#fb641d">*</span></strong>
-                <textarea name="message" placeholder="" data-constraints='@Length(min=20,max=999999)'></textarea>
+                <textarea ng-model="formData.message" name="message" placeholder="" data-constraints='@Length(min=20,max=999999)'></textarea>
                 <span class="empty-message">*This field is required.</span>
                 <span class="error-message">*The message is too short.</span>
             </label>
             <!-- <label class="recaptcha"><span class="empty-message">*This field is required.</span></label> -->
             <div class="btns">
-                <a data-type="submit" class="btn-default btn2">send</a>
+                <a data-type="submit" class="btn-default btn2" ng-disabled="submitButtonDisabled">send</a>
                 <p>* required fields</p>
             </div>
-            <input type="submit" id="submit" value="Submit" />
         </fieldset>
-        <p ng-class="result" style="padding: 15px; margin: 0;">{{resultMessage}}</p>
+        <p ng-class="result" style="padding: 15px; margin: 0;" >{{resultMessage}}</p>
     </form>
 </div>
