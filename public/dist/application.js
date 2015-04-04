@@ -188,15 +188,17 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 
 angular.module('core').controller('ContactFormController', ['$scope', '$http',
 	function($scope, $http) {
-		
-		$scope.submit = function(contactForm) {
-			$scope.submit = function(contactform) {
-				$scope.teams = Email.post('email').success(function(data) {
-					var d = data;
-				}).error(function(data) {
-					var d = data;
+		$scope.submit = function(formData) {
+			$scope.myVar = 'Hello from contact form controller';
+			
+			//Request
+			$http.post('/email', $scope.formData)
+				.success(function(data, status) {
+					console.log('Sent ok');
+				})
+				.error(function(data, status) {
+					console.log('Error');
 				});
-			};
 		};
 	}
 ]);
@@ -227,15 +229,6 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 	function($scope, Authentication) {
 		// This provides Authentication context.
 		$scope.authentication = Authentication;
-	}
-]);
-'use strict';
-
-//Menu service used for managing  menus
-angular.module('core').service('Email', [
-
-	function() {
-		
 	}
 ]);
 'use strict';
@@ -435,7 +428,7 @@ angular.module('main').config(['$stateProvider',
 			url: '/about-us',
 			templateUrl: 'modules/main/views/about-us.client.view.html',
             pageTitle: 'About Us'
-		})
+		});
 	}
 ]);
 'use strict';
