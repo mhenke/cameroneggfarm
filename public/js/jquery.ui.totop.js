@@ -21,7 +21,7 @@
 			$('html, body').stop().animate({scrollTop:0}, settings.scrollSpeed, settings.easingType);
 			$('#'+settings.containerHoverID, this).stop().animate({'opacity': 0 }, settings.inDelay, settings.easingType);
 			return false;
-		})
+		});
 		
 								
 		$(window).scroll(function() {

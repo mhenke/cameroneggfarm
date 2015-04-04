@@ -29,6 +29,6 @@ angular.module('main').config(['$stateProvider',
 			url: '/about-us',
 			templateUrl: 'modules/main/views/about-us.client.view.html',
             pageTitle: 'About Us'
-		})
+		});
 	}
 ]);
