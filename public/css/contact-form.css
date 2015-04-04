@@ -318,7 +318,7 @@
   font-weight: normal;
   height: 0;
   overflow: hidden;
-  font-size: 10px;
+  font-size: 14px;
   -webkit-transition: 0.3s ease-in height;
   transition: 0.3s ease-in height;
   z-index: 99;
