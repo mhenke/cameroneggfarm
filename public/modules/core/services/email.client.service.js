@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('core').factory('Email', [
-	function() {
-		// Email service logic
-		this.sendEmail = function(resultMessage) {
-			return resultMessage;
-		};
+//Articles service used for communicating with the articles REST endpoints
+angular.module('core').factory('Email', ['$resource',
+	function($resource) {
+		return $resource('email', {
+			//articleId: '@_id'
+		});
 	}
 ]);
