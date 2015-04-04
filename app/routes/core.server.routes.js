@@ -13,6 +13,5 @@ module.exports = function(app) {
 	
 		// Article Routes
 	app.route('/email')
-		.get(email.send)
 		.post(email.send);
 };
