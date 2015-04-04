@@ -26,6 +26,6 @@ exports.send = function(req, res) {
         return res.send(err.message);
     }
         console.log(json);
-        res.send('Email Sent OK!!!!');
+        res.send('success');
     });
 };
