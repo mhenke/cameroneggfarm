@@ -3,7 +3,7 @@ $(window).load(function(){
 	$('#contactform').TMForm({
 		recaptchaPublicKey:'6LeZwukSAAAAAG8HbIAE0XeNvCon_cXThgu9afkj'		
 	});
-    $('#contact-form2').TMForm({
+    $('#contactform2').TMForm({
 		recaptchaPublicKey:'6LeZwukSAAAAAG8HbIAE0XeNvCon_cXThgu9afkj'		
 	});
 });
