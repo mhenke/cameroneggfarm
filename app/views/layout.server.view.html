@@ -177,6 +177,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/tm-scripts.js"></script>
     <script type="text/javascript">
+        $(function() {
             google_api_map_init();
     
             function google_api_map_init() {
@@ -341,6 +342,7 @@
                 }
                 google.maps.event.addDomListener(window, "load", initialize);
             }
+        });
     </script>
     <!--Application JavaScript Files-->
     {% for jsFile in jsFiles %}
