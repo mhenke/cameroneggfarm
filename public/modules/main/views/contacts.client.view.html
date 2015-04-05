@@ -2,7 +2,7 @@
 	<div class="container">
         <section class="content_map indent wow zoomIn">
               <div class="google-map-api"> 
-                <div id="map-canvas2" class="gmap"></div> 
+                <div id="map-canvas" class="gmap"></div> 
               </div> 
         </section>
     </div>
@@ -87,7 +87,7 @@
                         maxWidth: 200
                     });
     
-                    var map = new google.maps.Map(document.getElementById("map-canvas2"), mapOptions);
+                    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
                     marker = new google.maps.Marker({
                         map: map,
                         position: markCoord1,
