@@ -179,8 +179,7 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 		state('home', {
 			url: '/',
 			templateUrl: 'modules/core/views/home.client.view.html',
-            controller: 'HomeController',
-            pageTitle: 'Home'
+            controller: 'HomeController'
 		});
 	}
 ]);
@@ -229,6 +228,14 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
 	function($scope, Authentication) {
 		// This provides Authentication context.
 		$scope.authentication = Authentication;
+	}
+]);
+'use strict';
+
+angular.module('core').controller('SearchController', ['$scope',
+	function($scope) {
+		// Search controller logic
+		// ...
 	}
 ]);
 'use strict';
@@ -406,28 +413,23 @@ angular.module('main').config(['$stateProvider',
 		$stateProvider.
 		state('privacy-policy', {
 			url: '/privacy-policy',
-			templateUrl: 'modules/main/views/privacy-policy.client.view.html',
-            pageTitle: 'Privacy Policy'
+			templateUrl: 'modules/main/views/privacy-policy.client.view.html'
 		}).
 		state('where-to-buy', {
 			url: '/where-to-buy',
-			templateUrl: 'modules/main/views/where-to-buy.client.view.html',
-            pageTitle: 'Where To Buy'
+			templateUrl: 'modules/main/views/where-to-buy.client.view.html'
 		}).
 		state('contacts', {
 			url: '/contacts',
-			templateUrl: 'modules/main/views/contacts.client.view.html',
-            pageTitle: 'Contacts'
+			templateUrl: 'modules/main/views/contacts.client.view.html'
 		}).
 		state('products', {
 			url: '/products',
-			templateUrl: 'modules/main/views/products.client.view.html',
-            pageTitle: 'Products'
+			templateUrl: 'modules/main/views/products.client.view.html'
 		}).
 		state('about-us', {
 			url: '/about-us',
-			templateUrl: 'modules/main/views/about-us.client.view.html',
-            pageTitle: 'About Us'
+			templateUrl: 'modules/main/views/about-us.client.view.html'
 		});
 	}
 ]);
