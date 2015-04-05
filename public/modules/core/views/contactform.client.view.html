@@ -1,5 +1,5 @@
-<div class="contactform">
-    <form id="contactform">
+<div ng-controller="ContactFormController" class="contactForm2">
+    <form ng-attr-id="{{ 'contactform-' + state.current.name}}" class="contact-form">
         <div class="contactform-loader"></div>
         <fieldset>
             <label class="name form-div-1">
@@ -47,3 +47,9 @@
         </div>
     </form>
 </div>
+
+<script>
+$('.contact-form').TMForm({
+    recaptchaPublicKey:'6LeZwukSAAAAAG8HbIAE0XeNvCon_cXThgu9afkj'		
+});
+</script>

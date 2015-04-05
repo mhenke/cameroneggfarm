@@ -2,31 +2,30 @@
 ========================================================*/
 /* Contact Form Basic Styles 
 ========================================================*/
-#contactform {
+.contact-form {
   position: relative;
   text-align: left;
 }
-#contactform .btns .btn4 {
+.contact-form .btns .btn4 {
   float: right;
 }
-#contactform p {
+.contact-form p {
   margin: 12px 0 0 0;
   float: left;
 }
-.contactform #contactform {
+.contactForm2 .contact-form {
   position: relative;
 }
-.contactform #contactform .btns .btn2 {
+.contactForm2 .contact-form .btns .btn2 {
   float: left;
   margin: 0 25px 0 0;
-  border: none;
 }
-.contactform #contactform .btns p {
+.contactForm2 .contact-form .btns p {
   margin: 0;
   float: left;
   color: #fb641d;
 }
-#contactform label {
+.contact-form label {
   position: relative;
   display: inline-block;
   width: 100%;
@@ -35,19 +34,19 @@
   box-sizing: border-box;
   margin-bottom: 23px;
 }
-#contactform fieldset {
+.contact-form fieldset {
   border: none;
 }
-.contactform #contactform fieldset {
+.contactForm2 .contact-form fieldset {
   margin-bottom: 17px;
 }
-.contactform .box {
+.contactForm2 .box {
   /*float:left;*/
   width: 100%;
 }
 /* Contact Form Placeholder Styles 
 ========================================================*/
-#contactform ._placeholder {
+.contact-form ._placeholder {
   width: 100% !important;
   position: absolute;
   left: 0;
@@ -64,19 +63,19 @@
   color: #2f2f2f;
   padding: 13px;
 }
-#contactform ._placeholder.focused {
+.contact-form ._placeholder.focused {
   opacity: 0.4;
   filter: alpha(opacity=40);
   -webkit-box-shadow: 0px 0px 7px 0px rgba(0, 0, 255, 0.5);
   box-shadow: 0px 0px 7px 0px rgba(0, 0, 255, 0.5);
 }
-#contactform ._placeholder.hidden {
+.contact-form ._placeholder.hidden {
   display: none;
 }
-#contactform .file ._placeholder {
+.contact-form .file ._placeholder {
   display: none;
 }
-.contactform #contactform ._placeholder {
+.contactForm2 .contact-form ._placeholder {
   width: 100% !important;
   position: absolute;
   left: 0;
@@ -95,7 +94,7 @@
 }
 /* Contact Form Input 
 ========================================================*/
-#contactform input[type='text'] {
+.contact-form input[type='text'] {
   width: 100%;
   outline: none;
   -webkit-box-sizing: border-box;
@@ -109,7 +108,7 @@
   color: #2f2f2f;
   padding: 13px;
 }
-.contactform #contactform input[type='text'] {
+.contactForm2 .contact-form input[type='text'] {
   border: 1px solid #b3b3b3;
   background: #fff;
   font: 18px/18px 'Georgia';
@@ -119,7 +118,7 @@
 }
 /* Contact Form File Input 
 ========================================================*/
-#contactform .input-group {
+.contact-form .input-group {
   position: relative;
   display: table;
   border-collapse: separate;
@@ -127,12 +126,12 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-#contactform input.form-control[disabled] {
+.contact-form input.form-control[disabled] {
   cursor: not-allowed;
   background-color: #eeeeee;
   opacity: 1;
 }
-#contactform input.form-control {
+.contact-form input.form-control {
   position: relative;
   z-index: 2;
   float: left;
@@ -145,41 +144,41 @@
   -moz-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
-#contactform .input-group-btn:first-child > .btn {
+.contact-form .input-group-btn:first-child > .btn {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
   margin: 0 -1px 0 0;
 }
-#contactform .input-group .form-control:last-child {
+.contact-form .input-group .form-control:last-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
-#contactform .input-group-btn:last-child > .btn {
+.contact-form .input-group-btn:last-child > .btn {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
-#contactform .input-group .form-control:first-child {
+.contact-form .input-group .form-control:first-child {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
-#contactform input.form-control,
-#contactform .input-group-btn {
+.contact-form input.form-control,
+.contact-form .input-group-btn {
   display: table-cell;
   border-collapse: separate;
   float: none !important;
 }
-#contactform .input-group-btn label {
+.contact-form .input-group-btn label {
   width: auto;
   margin-left: -1px;
 }
-#contactform .input-group-btn {
+.contact-form .input-group-btn {
   position: relative;
   font-size: 0;
   white-space: nowrap;
   width: 1%;
   vertical-align: middle;
 }
-#contactform .btn {
+.contact-form .btn {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
@@ -202,26 +201,26 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/*#contactform .btn-default {
+/*.contact-form .btn-default {
   color: #333333;
   background-color: #ffffff;
   border-color: #cccccc;
 }
 
-#contactform .btn-default:hover {
+.contact-form .btn-default:hover {
   color: #333333;
   background-color: #ebebeb;
   border-color: #adadad;
 }
 
-#contactform .btn-default:active, #contactform .btn-default:focus {
+.contact-form .btn-default:active, .contact-form .btn-default:focus {
   outline-offset: -2px;
   outline: none;
   .box-shadow(inset 0 3px 5px rgba(0, 0, 0, 0.125));
 }*/
 /* Contact Form Textarea 
 ========================================================*/
-#contactform textarea {
+.contact-form textarea {
   width: 100%;
   outline: none;
   -webkit-box-sizing: border-box;
@@ -235,50 +234,50 @@
   padding: 13px;
   resize: none;
 }
-#contactform .form-div-1,
-#contactform .form-div-2,
-#contactform .form-div-3 {
+.contact-form .form-div-1,
+.contact-form .form-div-2,
+.contact-form .form-div-3 {
   float: none;
   width: 100%;
   margin-right: 0;
 }
-#contactform .form-div-1 strong,
-#contactform .form-div-2 strong,
-#contactform .form-div-3 strong {
+.contact-form .form-div-1 strong,
+.contact-form .form-div-2 strong,
+.contact-form .form-div-3 strong {
   font: 18px/18px 'Georgia';
   color: #2f2f2f;
   margin-bottom: 16px;
   display: block;
 }
-#contactform .form-div-3 {
+.contact-form .form-div-3 {
   margin-right: 0;
 }
-#contactform .form-div-4 {
+.contact-form .form-div-4 {
   margin-bottom: 25px;
 }
-#contactform .form-div-4 textarea {
+.contact-form .form-div-4 textarea {
   line-height: 20px;
   padding: 12px 14px;
 }
-#contactform .form-div-4 strong {
+.contact-form .form-div-4 strong {
   font: 18px/18px 'Georgia';
   color: #2f2f2f;
   margin-bottom: 16px;
   display: block;
 }
-.contactform #contactform .form-div-4 {
+.contactForm2 .contact-form .form-div-4 {
   text-align: left;
   margin-bottom: 29px;
   /*float: left;*/
   width: 100%;
 }
-.contactform #contactform .form-div-4 strong {
+.contactForm2 .contact-form .form-div-4 strong {
   font: 18px/18px 'Georgia';
   color: #5b5b5b;
   margin-bottom: 16px;
   display: block;
 }
-.contactform #contactform textarea {
+.contactForm2 .contact-form textarea {
   border: 1px solid #b3b3b3;
   background: #fff;
   font: 18px/18px 'Georgia';
@@ -286,9 +285,9 @@
   color: #5b5b5b;
   padding: 13px;
 }
-.contactform #contactform .form-div-1,
-.contactform #contactform .form-div-2,
-#contactform .form-div-3 {
+.contactForm2 .contact-form .form-div-1,
+.contactForm2 .contact-form .form-div-2,
+.contact-form .form-div-3 {
   float: none;
   width: 100%;
   width: 246px;
@@ -296,21 +295,21 @@
   margin-right: 10px;
   text-align: left;
 }
-.contactform #contactform .form-div-1 strong,
-.contactform #contactform .form-div-2 strong,
-#contactform .form-div-3 strong {
+.contactForm2 .contact-form .form-div-1 strong,
+.contactForm2 .contact-form .form-div-2 strong,
+.contact-form .form-div-3 strong {
   font: 18px/18px 'Georgia';
   color: #5b5b5b;
   margin-bottom: 16px;
   display: block;
 }
-.contactform #contactform .form-div-3 {
+.contactForm2 .contact-form .form-div-3 {
   margin-right: 0;
 }
 /* Contact Form Error messages
 ========================================================*/
-#contactform .empty-message,
-#contactform .error-message {
+.contact-form .empty-message,
+.contact-form .error-message {
   position: absolute;
   right: 3px;
   top: 5px;
@@ -318,22 +317,22 @@
   font-weight: normal;
   height: 0;
   overflow: hidden;
-  font-size: 12px;
+  font-size: 14px;
   -webkit-transition: 0.3s ease-in height;
   transition: 0.3s ease-in height;
   z-index: 99;
 }
-#contactform .invalid .error-message,
-#contactform .empty .empty-message {
+.contact-form .invalid .error-message,
+.contact-form .empty .empty-message {
   height: 20px;
 }
-.contactform #contactform .empty-message,
-.contactform #contactform .error-message {
+.contactForm2 .contact-form .empty-message,
+.contactForm2 .contact-form .error-message {
   top: 0;
 }
 /* Contact Form Processing Box
 ========================================================*/
-#contactform .contactform-loader {
+.contact-form .contact-form-loader {
   position: absolute;
   z-index: -1;
   width: 100%;
@@ -349,7 +348,7 @@
   background-position: 50% 50%;
   opacity: 0;
 }
-#contactform.processing .contactform-loader {
+.contact-form.processing .contact-form-loader {
   opacity: 1;
   z-index: 99;
   -webkit-transition: all 0.3s ease-in;
@@ -360,7 +359,7 @@
 .modal-open {
   overflow: hidden;
 }
-#contactform .modal {
+.contact-form .modal {
   display: none;
   overflow: auto;
   overflow-y: scroll;
@@ -376,7 +375,7 @@
   font-size: 13px;
   overflow: hidden;
 }
-#contactform .modal h4 {
+.contact-form .modal h4 {
   font-weight: bold;
   padding: 0;
   margin: 0;
@@ -481,16 +480,16 @@ button.close {
 }
 /*---------------------------------------------------------------------------------------------------------------------------*/
 @media (min-width: 992px) and (max-width: 1219px) {
-  #contactform .form-div-1,
-  #contactform .form-div-2,
-  #contactform .form-div-3 {
+  .contact-form .form-div-1,
+  .contact-form .form-div-2,
+  .contact-form .form-div-3 {
     float: none;
     width: 100%;
     margin-right: 0;
   }
-  .contactform #contactform .form-div-1,
-  .contactform #contactform .form-div-2,
-  .contactform #contactform .form-div-3 {
+  .contactForm2 .contact-form .form-div-1,
+  .contactForm2 .contact-form .form-div-2,
+  .contactForm2 .contact-form .form-div-3 {
     float: none;
     width: 100%;
     margin-right: 0;
@@ -500,9 +499,9 @@ button.close {
 }
 /*---------------------------------------------------------------------------------------------------------------------------*/
 @media (min-width: 768px) and (max-width: 991px) {
-  #contactform .form-div-1,
-  #contactform .form-div-2,
-  #contactform .form-div-3 {
+  .contact-form .form-div-1,
+  .contact-form .form-div-2,
+  .contact-form .form-div-3 {
     float: none;
     width: 100%;
     margin-right: 0;
@@ -511,14 +510,14 @@ button.close {
     width: 100%;
     float: none;
   }
-  .contactform #contactform .form-div-4 {
+  .contactForm2 .contact-form .form-div-4 {
     float: none;
     width: 100%;
     margin-left: 0;
   }
-  .contactform #contactform .form-div-1,
-  .contactform #contactform .form-div-2,
-  .contactform #contactform .form-div-3 {
+  .contactForm2 .contact-form .form-div-1,
+  .contactForm2 .contact-form .form-div-2,
+  .contactForm2 .contact-form .form-div-3 {
     float: none;
     width: 100%;
     margin-right: 0;
@@ -528,9 +527,9 @@ button.close {
 }
 /*---------------------------------------------------------------------------------------------------------------------------*/
 @media (max-width: 767px) {
-  #contactform .form-div-1,
-  #contactform .form-div-2,
-  #contactform .form-div-3 {
+  .contact-form .form-div-1,
+  .contact-form .form-div-2,
+  .contact-form .form-div-3 {
     float: none;
     width: 100%;
     margin-right: 0;
@@ -539,17 +538,17 @@ button.close {
     width: 100%;
     float: none;
   }
-  .contactform #contactform .form-div-4 {
+  .contactForm2 .contact-form .form-div-4 {
     float: none;
     width: 100%;
     margin-left: 0;
   }
-  .contactform-box {
+  .contact-form-box {
     margin: 62px 0;
   }
-  .contactform #contactform .form-div-1,
-  .contactform #contactform .form-div-2,
-  .contactform #contactform .form-div-3 {
+  .contactForm2 .contact-form .form-div-1,
+  .contactForm2 .contact-form .form-div-2,
+  .contactForm2 .contact-form .form-div-3 {
     float: none;
     width: 100%;
     margin-right: 0;
