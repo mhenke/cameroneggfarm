@@ -225,10 +225,11 @@ angular.module('core').controller('HeaderController', ['$state', '$scope', 'Auth
 ]);
 'use strict';
 
-angular.module('core').controller('HomeController', ['$scope', 'Authentication',
-	function($scope, Authentication) {
+angular.module('core').controller('HomeController', ['$route', '$scope', 'Authentication',
+	function($route, $scope, Authentication) {
 		// This provides Authentication context.
 		$scope.authentication = Authentication;
+		$route.reload();
 	}
 ]);
 'use strict';
