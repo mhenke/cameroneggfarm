@@ -21,7 +21,8 @@ var fs = require('fs'),
 	flash = require('connect-flash'),
 	config = require('./config'),
 	consolidate = require('consolidate'),
-	path = require('path');
+	path = require('path'),
+	csrf = require('csurf');
 
 module.exports = function(db) {
 	// Initialize express app
@@ -83,7 +84,25 @@ module.exports = function(db) {
 	app.use(methodOverride());
 
 	// CookieParser should be above session
-	app.use(cookieParser());
+	var sess = {
+	  secret: 'keyboard cat',
+  	  resave: false,
+  	  saveUninitialized: true,
+	  cookie: {}
+	}
+	if (app.get('env') === 'production') {
+	  app.set('trust proxy', 1) // trust first proxy
+	  sess.cookie.secure = true // serve secure cookies
+	}
+	
+	app.use(session(sess));
+	app.use(csrf());
+	app.use(function (req, res, next) {
+	 	res.cookie("XSRF-TOKEN",req.csrfToken());
+	    return next();
+	});
+	
+
 
 	// Express MongoDB session storage
 	app.use(session({

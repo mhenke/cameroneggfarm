@@ -9,9 +9,9 @@ var core = require('../../app/controllers/core.server.controller');
 module.exports = function(app) {
 	// Root routing
 	
-	app.route('/').get(core.index,email.send);
+	app.route('/').get(core.index);
 	
-		// Article Routes
+	// Email Routes
 	app.route('/email')
 		.post(email.send);
 };
