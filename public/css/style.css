@@ -399,7 +399,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 	margin-bottom: 5px;
 }
 .thumb-box2 a {
-	color: #fb641d;
+	color: #5B5B5B;
 	font: 18px/1em 'Georgia';
 	-webkit-transition: all 0.25s;
 	-o-transition: all 0.25s;
@@ -595,14 +595,14 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 }
 .thumb-pad5 .thumbnail .caption a {
 	font: bold 24px/1em 'Georgia', "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #fb641d;
+	color: #5b5b5b;
 	text-transform: uppercase;
 	-webkit-transition: all 0.25s;
 	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .thumb-pad5 .thumbnail .caption a:hover {
-	color: #5b5b5b;
+	color: #828282;
 }
 .thumb-pad5 figure {
 	margin: 0 0 39px 0;
