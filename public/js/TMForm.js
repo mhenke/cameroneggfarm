@@ -176,7 +176,7 @@ $(window).load(function(){
 								.removeClass(opt.processingClass)
 								.addClass(opt.successClass);
 
-							modal.find('.modal-title').text('Success!');
+							modal.find('.modal-title').text('Thank you!');
 							modal.find('.modal-body').text('Your message has been successfully sent!');
 
 							setTimeout(function(){
