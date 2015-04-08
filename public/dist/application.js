@@ -187,11 +187,17 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 
 angular.module('core').controller('ContactFormController', ['$scope', '$http',
 	function($scope, $http) {
+		var $cookies;
+		angular.injector(['ngCookies']).invoke(function(_$cookies_) {
+			$cookies = _$cookies_;
+		});
+
+		$scope.csrftoken = $cookies['XSRF-TOKEN'];
 		$scope.submit = function(formData) {
-			$scope.myVar = 'Hello from contact form controller';
-			
 			//Request
-			$http.post('/email', $scope.formData)
+			$http.post('/email', {
+					withCredentials: true
+				}, $scope.formData)
 				.success(function(data, status) {
 					console.log('Sent ok');
 				})
