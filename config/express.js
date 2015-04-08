@@ -13,6 +13,7 @@ var fs = require('fs'),
 	compress = require('compression'),
 	methodOverride = require('method-override'),
 	cookieParser = require('cookie-parser'),
+	cookieSession = require('cookie-session'),
 	helmet = require('helmet'),
 	passport = require('passport'),
 	mongoStore = require('connect-mongo')({
@@ -72,7 +73,8 @@ module.exports = function(db) {
 
 		// Disable views cache
 		app.set('view cache', false);
-	} else if (process.env.NODE_ENV === 'production') {
+	}
+	else if (process.env.NODE_ENV === 'production') {
 		app.locals.cache = 'memory';
 	}
 
@@ -80,29 +82,20 @@ module.exports = function(db) {
 	app.use(bodyParser.urlencoded({
 		extended: true
 	}));
+	
 	app.use(bodyParser.json());
 	app.use(methodOverride());
-
-	// CookieParser should be above session
-	var sess = {
-	  secret: 'keyboard cat',
-  	  resave: false,
-  	  saveUninitialized: true,
-	  cookie: {}
-	}
-	if (app.get('env') === 'production') {
-	  app.set('trust proxy', 1) // trust first proxy
-	  sess.cookie.secure = true // serve secure cookies
-	}
 	
-	app.use(session(sess));
+	app.use(cookieParser(config.sessionSecret));
+	app.use(cookieSession({
+		secret: config.sessionSecret
+	}));
+	
 	app.use(csrf());
-	app.use(function (req, res, next) {
-	 	res.cookie("XSRF-TOKEN",req.csrfToken());
-	    return next();
+	app.use(function(req, res, next) {
+		res.cookie("XSRF-TOKEN", encodeURIComponent(req.csrfToken()));
+		return next();
 	});
-	
-
 
 	// Express MongoDB session storage
 	app.use(session({

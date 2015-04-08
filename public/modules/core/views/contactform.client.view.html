@@ -5,7 +5,6 @@
             <label class="name form-div-1">
                 <strong>Name<span style="color:#FB641D">*</span></strong>
                 <input type="text" name="name" placeholder="" value="" data-constraints="@Required @JustLetters @Length(min=2,max=999999)" />
-                <input type="text" name="_csrf" value="{{token}}">
                 <span class="empty-message">*This field is required.</span>
                 <span class="error-message">*This is not a valid name.</span>
             </label>
@@ -46,6 +45,7 @@
                 </div>
             </div>
         </div>
+        <input type="hidden", name="_csrf", value="{{csrftoken}}" />
     </form>
 </div>
 
