@@ -168,12 +168,8 @@
         </div>
     </footer>
 
-    <section class="content_map" ng-show="state.current.name === 'home'">
-    <div class="google-map-api" ng-controller="GoogleMapController">
-        <div id="map-canvas" ng-init="initialize()" class="gmap"></div>
-    </div>
-    </section>
-    
+     <ng-include ng-show="state.current.name === 'home'" src="'/modules/core/views/google-map.client.view.html'"></ng-include>
+     
     <script src="js/bootstrap.min.js"></script>
     <script src="js/tm-scripts.js"></script>
 

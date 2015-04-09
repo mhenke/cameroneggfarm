@@ -86,7 +86,7 @@ angular.module('core').controller('GoogleMapController', ['$scope',
 			        icon: markerIcon
 			      });
 			     */
-			var contentString = '<div id="content">' +
+			var contentString0 = '<div id="content">' +
 				'<div id="siteNotice">' +
 				'</div>' +
 				'<div id="bodyContent">' +
@@ -122,7 +122,7 @@ angular.module('core').controller('GoogleMapController', ['$scope',
 			'</div>'+
 			'</div>';*/
 			var infowindow = new google.maps.InfoWindow({
-				content: contentString
+				content: contentString0
 			});
 			var infowindow1 = new google.maps.InfoWindow({
 				content: contentString1
@@ -158,21 +158,11 @@ angular.module('core').controller('GoogleMapController', ['$scope',
                   $('.gm-style-iw').parent().parent().addClass("gm-wrapper");
                 });
                 
-                google.maps.event.addDomListener(window, 'resize', function() {
-				map.setCenter(coordData);
-				var center = map.getCenter();
-				google.maps.event.trigger(map, "resize");
-				map.setCenter(center);
+                
 			});
-            */
-
-		}
-
-		$scope.google_api_map_init = function() {
-			
-
-			//google.maps.event.addDomListener(window, "load", initialize);
-		}
+			*/
+			google.maps.event.addDomListener(window, "load");
+		};
 
 	}
 ]);
