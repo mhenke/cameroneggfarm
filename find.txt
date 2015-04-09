@@ -1,0 +1,1 @@
+*.*,-/node_modules,-/public/lib,-/public/dist,-/public/application.js
