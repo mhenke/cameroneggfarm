@@ -116,11 +116,7 @@ module.exports = function(db) {
 	app.use(flash());
 
 	// Use helmet to secure Express headers
-	app.use(helmet.xframe());
-	app.use(helmet.xssFilter());
-	app.use(helmet.nosniff());
-	app.use(helmet.ienoopen());
-	app.disable('x-powered-by');
+	app.use(helmet());
 
 	// Setting the app router and static folder
 	app.use(express.static(path.resolve('./public')));
