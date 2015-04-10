@@ -212,7 +212,7 @@ angular.module('core').controller('ContactFormController', ['$scope', '$http',
 angular.module('core').controller('GoogleMapController', ['$scope',
 	function($scope) {
 		$scope.initialize = function() {
-			var map;
+			map;
 			var coordData = new google.maps.LatLng(parseFloat(42.8611096), parseFloat(-98.0286823));
 			var markCoord1 = new google.maps.LatLng(parseFloat(42.8111096), parseFloat(-98.1925768));
 			// var markCoord2 = new google.maps.LatLng(parseFloat(40.6422180), parseFloat(-73.9784068,14)); 
@@ -252,7 +252,7 @@ angular.module('core').controller('GoogleMapController', ['$scope',
 				origin: new google.maps.Point(0, 0),
 				anchor: new google.maps.Point(21, 70)
 			};
-			
+
 			var mapOptions = {
 				zoom: 9,
 				center: coordData,
@@ -371,8 +371,14 @@ angular.module('core').controller('GoogleMapController', ['$scope',
 			});
 			*/
 			google.maps.event.addDomListener(window, "load");
+			
+			$scope.$watch('state.current.name', function() {
+				window.setTimeout(function() {
+					google.maps.event.trigger(map, 'resize');
+					map.setCenter(coordData);
+				}, 100);
+			});
 		};
-
 	}
 ]);
 'use strict';
