@@ -1,1 +1,5 @@
 *.*,-/node_modules,-/public/lib,-/public/dist,-/public/application.js
+
+grunt build && grunt build:production
+
+git push && git push heroku
