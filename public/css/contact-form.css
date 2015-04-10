@@ -94,7 +94,7 @@
 }
 /* Contact Form Input 
 ========================================================*/
-.contact-form input[type='text'] {
+.contact-form input[type='text'], .contact-form input[type='tel'], .contact-form input[type='email'] {
   width: 100%;
   outline: none;
   -webkit-box-sizing: border-box;
@@ -108,7 +108,7 @@
   color: #2f2f2f;
   padding: 13px;
 }
-.contactForm2 .contact-form input[type='text'] {
+.contactForm2 .contact-form input[type='text'], .contactForm2 .contact-form input[type='tel'], .contactForm2 .contact-form input[type='email'] {
   border: 1px solid #b3b3b3;
   background: #fff;
   font: 18px/18px 'Georgia';
