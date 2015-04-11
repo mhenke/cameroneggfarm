@@ -62,7 +62,6 @@
     <script src="js/jquery.mobile.customized.min.js"></script>
     <script>
         $(document).ready(function() {
-            jQuery('.camera_wrap').camera();
             if ($('html').hasClass('desktop')) {
                 new WOW().init();
             }
@@ -113,8 +112,8 @@
             </nav>
         </header>
     </div>
-    <div class="slider" ng-hide="state.current.name !== 'home'">
-        <div class="camera_wrap">
+    <div class="slider" ng-show="state.current.name === 'home'">
+        <div class="camera_wrap" ng-if="state.current.name === 'home'" ng-init="camera_init()">
             <div data-src="img/new/slide-3.jpg">
                 <div class="camera_caption fadeIn">
                     <p class="title">Very yummy cattle, with
@@ -167,8 +166,8 @@
         </div>
     </footer>
 
-     <ng-include ng-show="state.current.name === 'home'" src="'/modules/core/views/google-map.client.view.html'"></ng-include>
-     
+    <ng-include ng-show="state.current.name === 'home'" src="'/modules/core/views/google-map.client.view.html'"></ng-include>
+
     <script src="js/bootstrap.min.js"></script>
     <script src="js/tm-scripts.js"></script>
 

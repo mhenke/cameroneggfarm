@@ -3,6 +3,13 @@
 angular.module('core').controller('HeaderController', ['$state', '$scope',
 	function($state, $scope) {
 		$scope.state = $state;
-		$scope.pageTitle = $state.current.name;
+		$scope.camera_init = function() {
+			$(document).ready(function() {
+				setTimeout(function(){
+				jQuery('.camera_wrap').camera();
+				console.log("ran camera_init");
+				}, 0);
+			});
+		};
 	}
 ]);
