@@ -37,6 +37,7 @@
 }
 .camera_wrap {
 	width: 100%;
+	float:left;
 }
 .camera_src {
 	display: none;
