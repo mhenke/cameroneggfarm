@@ -394,7 +394,7 @@ angular.module('core').controller('HeaderController', ['$state', '$scope',
 			$(document).ready(function() {
 				setTimeout(function(){
 				jQuery('.camera_wrap').camera();
-				console.log("ran camera_init");
+				//console.log("ran camera_init");
 				}, 0);
 			});
 		};
