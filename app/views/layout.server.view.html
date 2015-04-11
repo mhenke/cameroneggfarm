@@ -55,11 +55,6 @@
     <script src="js/TMForm.js"></script>
     <script src="js/modal.js"></script>
     <script src="js/bootstrap-filestyle.js"></script>
-    <script>
-        $(document).ready(function() {
-            jQuery('.camera_wrap').camera();
-        });
-    </script>
 
     <!--[if (gt IE 9)|!(IE)]><!-->
     <script src="js/wow/wow.js"></script>
@@ -67,6 +62,7 @@
     <script src="js/jquery.mobile.customized.min.js"></script>
     <script>
         $(document).ready(function() {
+            jQuery('.camera_wrap').camera();
             if ($('html').hasClass('desktop')) {
                 new WOW().init();
             }

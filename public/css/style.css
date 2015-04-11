@@ -374,6 +374,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 }
 .thumb-box1 {
 	padding: 87px 0 0 0;
+	overflow: hidden;
 }
 .thumb-box2 {
 	padding: 103px 0 0 0;
