@@ -176,6 +176,10 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider',
 
 		// Home state routing
 		$stateProvider.
+		state('slider', {
+			url: '/slider',
+			templateUrl: 'modules/core/views/slider.client.view.html'
+		}).
 		state('home', {
 			url: '/',
 			templateUrl: 'modules/core/views/home.client.view.html',
@@ -386,7 +390,14 @@ angular.module('core').controller('GoogleMapController', ['$scope',
 angular.module('core').controller('HeaderController', ['$state', '$scope',
 	function($state, $scope) {
 		$scope.state = $state;
-		$scope.pageTitle = $state.current.name;
+		$scope.camera_init = function() {
+			$(document).ready(function() {
+				setTimeout(function(){
+				jQuery('.camera_wrap').camera();
+				console.log("ran camera_init");
+				}, 0);
+			});
+		};
 	}
 ]);
 'use strict';
@@ -403,6 +414,13 @@ angular.module('core').controller('SearchController', ['$scope',
 	function($scope) {
 		// Search controller logic
 		// ...
+	}
+]);
+'use strict';
+
+angular.module('core').controller('SliderController', ['$scope',
+	function($scope) {
+		
 	}
 ]);
 'use strict';
