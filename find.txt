@@ -3,3 +3,5 @@
 grunt build && grunt build:production
 
 git push && git push heroku
+
+ input[type='tel'], input[type='email'] 
