@@ -60,13 +60,6 @@
     <script src="js/wow/wow.js"></script>
     <script src="js/wow/device.min.js"></script>
     <script src="js/jquery.mobile.customized.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            if ($('html').hasClass('desktop')) {
-                new WOW().init();
-            }
-        });
-    </script>
     <!--<![endif]-->
 
     <!--[if lt IE 9]>
@@ -82,11 +75,11 @@
   <![endif]-->
 </head>
 
-<body data-ng-controller="HeaderController">
+<body data-ng-controller="HeaderController" ng-cloak class="ng-cloak">
     <!--header-->
     <div class="main">
         <header class="clearfix" data-ng-class="{indent: state.current.name === 'home'}">
-            <h1 class="navbar-brand navbar-brand_ wow fadeInLeft" data-wow-delay="0.2s"><a href="/#!/"><img src="img/new/logo2.png" alt="log3o"></a></h1>
+            <h1 class="navbar-brand navbar-brand_ wow fadeInLeft" data-wow-delay="0.2s"><a href="/#!/"><img src="img/new/logo2.png" alt="logo"></a></h1>
             <div class="js-search flt__l flt__n-xl">
                 <div class="toggle"></div>
                 <form id="search" class="search-form" action="search.php" method="GET" accept-charset="utf-8">
@@ -113,7 +106,7 @@
         </header>
     </div>
     <div class="slider" ng-show="state.current.name === 'home'">
-        <div class="camera_wrap" ng-if="state.current.name === 'home'" ng-init="camera_init()">
+        <div class="camera_wrap" ng-if="state.current.name === 'home'" ng-init="camera_init()" ng-if="state.current.name !== 'home'" ng-init="wow_init()">
             <div data-src="img/new/slide-3.jpg">
                 <div class="camera_caption fadeIn">
                     <p class="title">Very yummy cattle, with
@@ -140,7 +133,7 @@
         </div>
     </div>
     <!--content-->
-    <div class="content" data-ng-class="{indent: state.current.name !== 'home'}">
+    <div class="content" data-ng-class="{indent: state.current.name !== 'home'}" ng-cloak class="ng-cloak">
         <!-- indent class for not home page -->
         {% block content %}{% endblock %}
     </div>

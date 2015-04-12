@@ -380,7 +380,7 @@ angular.module('core').controller('GoogleMapController', ['$scope',
 				window.setTimeout(function() {
 					google.maps.event.trigger(map, 'resize');
 					map.setCenter(coordData);
-				}, 150);
+				}, 0);
 			});
 		};
 	}
@@ -392,10 +392,24 @@ angular.module('core').controller('HeaderController', ['$state', '$scope',
 		$scope.state = $state;
 		$scope.camera_init = function() {
 			$(document).ready(function() {
-				setTimeout(function(){
-				jQuery('.camera_wrap').camera({fx:'random', loader:'pie'});
-				//console.log("ran camera_init");
+				setTimeout(function() {
+					jQuery('.camera_wrap').camera({
+						fx: 'random',
+						loader: 'pie'
+					});
+					//console.log("ran camera_init");
 				}, 0);
+
+				window.setTimeout(function() {
+					$scope.wow_init();
+				}, 1750);
+			});
+		};
+		$scope.wow_init = function() {
+			$(document).ready(function() {
+				if ($('html').hasClass('desktop')) {
+					new WOW().init();
+				}
 			});
 		};
 	}
