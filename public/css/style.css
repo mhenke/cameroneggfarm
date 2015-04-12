@@ -98,7 +98,7 @@ header {
 	margin: 0;
 	padding: 24px 61px;
 	z-index: 11;
-	background: url(../img/bg_pic.jpg) center 0 no-repeat;
+	background: url(../img/new/bg1.jpg) center 0 no-repeat;
 }
 header.indent {
 	position: absolute;
