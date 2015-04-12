@@ -98,7 +98,7 @@ header {
 	margin: 0;
 	padding: 24px 61px;
 	z-index: 11;
-	background: url(../img/new/slide-1-1.jpg) center 0 no-repeat;
+	background: url(../img/bg_pic.jpg) center 0 no-repeat;
 }
 header.indent {
 	position: absolute;
@@ -140,6 +140,7 @@ nav.tm_navbar li a {
 	text-transform: uppercase;
 	background: none;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 nav.tm_navbar li.active > a {
@@ -153,22 +154,26 @@ nav.tm_navbar li:hover > a {
 	color: #fb641d;
 	background: none;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 nav.tm_navbar li:hover > span {
 	color: #fb641d;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 nav.tm_navbar .sfHover > a {
 	color: #fb641d;
 	background: none;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 nav.tm_navbar .sfHover > span {
 	color: #fb641d;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 nav.tm_navbar li span {
@@ -181,6 +186,7 @@ nav.tm_navbar li span {
 	font-size: 10px;
 	z-index: 0;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 /* subMenu1
@@ -232,7 +238,9 @@ nav.tm_navbar .sub-menu > ul li a {
 	background: transparent;
 	text-transform: none;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
+	-webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0);
 	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0);
 }
 nav.tm_navbar .sub-menu > ul li span {
@@ -251,13 +259,16 @@ nav.tm_navbar .sub-menu > ul li a:hover {
 	color: #ffffff !important;
 	background: #2f2f2f !important;
 	-webkit-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
 	transition: all 0.25s ease;
+	-webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.25);
 	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.25);
 }
 nav.tm_navbar .sub-menu > ul li.sfHover > a {
 	text-decoration: none;
 	color: #ffffff !important;
 	background: #2f2f2f !important;
+	-webkit-box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.16);
 	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.16);
 }
 /* subMenu2
@@ -287,6 +298,7 @@ nav.tm_navbar .sub-menu ul ul li a {
 	background: transparent;
 	text-transform: none;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 nav.tm_navbar .sub-menu > ul li > ul li a:hover {
@@ -294,6 +306,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 	color: #ffffff !important;
 	background: #2f2f2f !important;
 	-webkit-transition: all 0.25s ease;
+	-o-transition: all 0.25s ease;
 	transition: all 0.25s ease;
 }
 .select-menu {
@@ -360,8 +373,8 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 	line-height: 36px;
 }
 .thumb-box1 {
-	padding: 87px 0 0 0;
 	overflow: hidden;
+	padding: 87px 0 0 0;
 }
 .thumb-box2 {
 	padding: 103px 0 0 0;
@@ -386,9 +399,10 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 	margin-bottom: 5px;
 }
 .thumb-box2 a {
-	color: #5B5B5B;
+	color: #fb641d;
 	font: 18px/1em 'Georgia';
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .thumb-box2 a:hover {
@@ -581,13 +595,14 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 }
 .thumb-pad5 .thumbnail .caption a {
 	font: bold 24px/1em 'Georgia', "Helvetica Neue", Helvetica, Arial, sans-serif;
-	color: #5b5b5b;
+	color: #fb641d;
 	text-transform: uppercase;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .thumb-pad5 .thumbnail .caption a:hover {
-	color: #828282;
+	color: #5b5b5b;
 }
 .thumb-pad5 figure {
 	margin: 0 0 39px 0;
@@ -617,6 +632,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 	color: #22c8ff;
 	text-transform: uppercase;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .thumb-pad6 .thumbnail .caption a:hover {
@@ -655,6 +671,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 	font: 15px 'Georgia', "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #22c8ff;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .thumb-pad7 .thumbnail .caption a:hover {
@@ -732,6 +749,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 .thumb-pad9 .thumbnail .caption .title a {
 	color: #ffffff;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .thumb-pad9 .thumbnail .caption .title a:hover {
@@ -745,6 +763,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 .thumb-pad9 .thumbnail .caption .descrip a {
 	color: #ffffff;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .thumb-pad9 .thumbnail .caption .descrip a:hover {
@@ -760,6 +779,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 .thumb-pad9 figure {
 	margin: 0 30px 0 0;
 	float: left;
+	-webkit-box-shadow: 0 0 21px 0 rgba(0, 0, 0, 0.13);
 	box-shadow: 0 0 21px 0 rgba(0, 0, 0, 0.13);
 }
 .thumb-pad9 figure img {
@@ -780,7 +800,9 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 	text-transform: uppercase;
 	float: none;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
+	-webkit-box-shadow: 10px 10px 21px 0 rgba(0, 0, 0, 0.45);
 	box-shadow: 10px 10px 21px 0 rgba(0, 0, 0, 0.45);
 }
 .btn-default.btn1:hover {
@@ -801,6 +823,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 	text-transform: uppercase;
 	float: none;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .btn-default.btn2:hover {
@@ -821,6 +844,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 	text-transform: uppercase;
 	float: none;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .btn-default.btn3:hover {
@@ -841,6 +865,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 	border: none;
 	float: none;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .btn-default.btn4 span {
@@ -858,6 +883,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 .btn-default.btn4:hover span {
 	color: #5b5b5b;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 /* list
@@ -877,6 +903,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 .list1 li a {
 	display: block;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .list1 li a:hover {
@@ -900,6 +927,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 	font: 16px 'Georgia', "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #fb641d;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .list1-1 li a:hover {
@@ -922,6 +950,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 	font: 16px 'Georgia', "Helvetica Neue", Helvetica, Arial, sans-serif;
 	color: #fb641d;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .list2 li a:hover {
@@ -1000,6 +1029,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 	margin-bottom: 5px;
 	text-transform: uppercase;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .list5 li a:hover {
@@ -1023,6 +1053,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 	color: #ffffff;
 	text-transform: uppercase;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .list6 li a:hover {
@@ -1075,6 +1106,8 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 #search-404 input {
 	box-shadow: none;
 	border-radius: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	margin: 0;
 	width: 100%;
@@ -1174,6 +1207,7 @@ nav.tm_navbar .sub-menu > ul li > ul li a:hover {
 	font: 18px 'Georgia', "Helvetica Neue", Helvetica, Arial, sans-serif;
 	text-decoration: none;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .mail:hover {
@@ -1196,6 +1230,7 @@ footer p {
 footer p a {
 	color: #a8a8a8;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 footer p a:hover {
@@ -1232,6 +1267,7 @@ footer hr {
 	background: #5a5a5a;
 	text-align: center;
 	-webkit-transition: all 0.25s;
+	-o-transition: all 0.25s;
 	transition: all 0.25s;
 }
 .follow_icon li a:hover {
@@ -1424,28 +1460,6 @@ footer hr {
 }
 }
 /*===========================================================================================================================*/
-
-.camera_caption {
-	position: absolute;
-	top:35%;
-    width:100%;
-	display: block;
-    padding:0;
-	box-sizing: border-box;
-    text-align:center;
-}
-.camera_caption .title {
-    font:72px/86px 'Fjalla One';
-    color:#fff;
-    text-transform:uppercase;
-    letter-spacing:-1px;
-    margin-bottom:24px;
-}
-.camera_caption .description {
-    font:24px/38px 'Georgia';
-    color:#fff;
-    margin-bottom:74px;
-}
 @media (max-width: 560px) {
  .thumb-box2 figure img {
  width: 100%;

@@ -380,7 +380,7 @@ angular.module('core').controller('GoogleMapController', ['$scope',
 				window.setTimeout(function() {
 					google.maps.event.trigger(map, 'resize');
 					map.setCenter(coordData);
-				}, 100);
+				}, 150);
 			});
 		};
 	}
