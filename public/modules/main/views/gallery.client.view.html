@@ -7,7 +7,7 @@
         limit: 3,
         userId: 34336629,
         sortBy: 'most-recent',
-        template: '<div class="row" ><div class="col-md-4 wow fadeInLeft animated" data-wow-delay="0.1s"><a href="{{link}}"><img class="img-responsive" src="{{image}}" alt=""></a></div><div class="col-md-8"><p class="gallery wow fadeInUp animated" data-wow-delay="0.3s">{{caption}}</p></div></div><hr class="gallery">',
+        template: '<div class="col-lg-4 col-md-6 col-sm-6 wow fadeInUp"><div class="thumb-pad4"><div class="thumbnail"><figure><a href="{{link}}"><img class="img-responsive" src="{{image}}" alt=""></a></figure><div class="caption"><p>{{caption}}</p><p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <a href="{{link}}">{{comments}}</a> / <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> <a href="{{link}}">{{likes}}</a></p></div></div></div></div>',
     });
     feed.run();
 </script>
