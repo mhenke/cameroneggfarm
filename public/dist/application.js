@@ -627,6 +627,10 @@ angular.module('main').config(['$stateProvider',
 	function($stateProvider) {
 		// Main state routing
 		$stateProvider.
+		state('gallery', {
+			url: '/gallery',
+			templateUrl: 'modules/main/views/gallery.client.view.html'
+		}).
 		state('privacy-policy', {
 			url: '/privacy-policy',
 			templateUrl: 'modules/main/views/privacy-policy.client.view.html'
@@ -662,6 +666,14 @@ angular.module('main').controller('AboutUsController', ['$scope',
 angular.module('main').controller('ContactsController', ['$scope',
 	function($scope) {
 		// Controller Logic
+		// ...
+	}
+]);
+'use strict';
+
+angular.module('main').controller('GalleryController', ['$scope',
+	function($scope) {
+		// Gallery controller logic
 		// ...
 	}
 ]);
