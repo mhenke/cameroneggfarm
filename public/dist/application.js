@@ -393,7 +393,7 @@ angular.module('core').controller('HeaderController', ['$state', '$scope',
 		$scope.camera_init = function() {
 			$(document).ready(function() {
 				setTimeout(function(){
-				jQuery('.camera_wrap').camera({fx:'random', loader:'pie', 'navigation':true});
+				jQuery('.camera_wrap').camera({fx:'random', loader:'pie'});
 				//console.log("ran camera_init");
 				}, 0);
 			});
