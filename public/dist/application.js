@@ -213,6 +213,14 @@ angular.module('core').controller('ContactFormController', ['$scope', '$http',
 ]);
 'use strict';
 
+angular.module('core').controller('FooterController', ['$scope',
+	function($scope) {
+		// Footer controller logic
+		// ...
+	}
+]);
+'use strict';
+
 angular.module('core').controller('GoogleMapController', ['$scope',
 	function($scope) {
 		$scope.initialize = function() {
