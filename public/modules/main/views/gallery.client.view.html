@@ -1,22 +1,44 @@
-<script type="text/javascript">
-    var feed = new Instafeed({
-        get: 'user',
-        resolution: 'standard_resolution',
-        //clientId: '4616410d92be455ba944ffd7b3f35aed',
-        accessToken:'34336629.4616410.bf1cbca47706468d8965b92394836b1a',
-        limit: 3,
-        userId: 34336629,
-        sortBy: 'most-recent',
-        template: '<div class="col-lg-4 col-md-6 col-sm-6 wow fadeInUp"><div class="thumb-pad4"><div class="thumbnail"><figure><a href="{{link}}"><img class="img-responsive" src="{{image}}" alt=""></a></figure><div class="caption"><p>{{caption}}</p><p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <a href="{{link}}">{{comments}}</a> / <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> <a href="{{link}}">{{likes}}</a></p></div></div></div></div>',
-    });
-    feed.run();
-</script>
 <section data-ng-controller="GalleryController">
+    <script type="text/javascript">
+        var loadButton = document.getElementById('load-more');
+        var feed = new Instafeed({
+            after: function() {
+                // disable button if no more results to load
+                if (!this.hasNext()) {
+                    loadButton.setAttribute('disabled', 'disabled');
+                }
+            },
+            get: 'user',
+            resolution: 'standard_resolution',
+            //clientId: '4616410d92be455ba944ffd7b3f35aed',
+            accessToken: '34336629.4616410.bf1cbca47706468d8965b92394836b1a',
+            limit: 3,
+            userId: 34336629,
+            sortBy: 'most-recent',
+            template: '<div class="col-lg-4 col-md-6 col-sm-6 wow fadeInUp"><div class="thumb-pad4"><div class="thumbnail"><figure><a href="{{link}}"><img class="img-responsive" src="{{image}}" alt=""></a></figure><div class="caption"><p>{{caption}}</p><p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <a href="{{link}}">{{comments}}</a> / <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> <a href="{{link}}">{{likes}}</a></p></div></div></div></div>',
+
+
+        });
+
+        // bind the load more button
+        loadButton.addEventListener('click', function() {
+            feed.next();
+        });
+
+        feed.run();
+    </script>
+
     <div class="thumb-box9">
         <div class="container">
             <h2 class="wow fadeInUp">our gallery</h2>
             <!-- Picture One -->
-            <section id="instafeed"></section>
-       </div>
-   </div>
+            <section class="row" id="instafeed"></section>
+
+        </div>
+    </div>
+    <div class="thumb-box9">
+        <div class="container">
+            <a href="javascript:void(0);" id="load-more" class="btn-default btn3">load more</a>
+        </div>
+    </div>
 </section>

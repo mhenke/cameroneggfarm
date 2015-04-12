@@ -158,26 +158,7 @@
         {% block content %}{% endblock %}
     </div>
     <!--footer-->
-    <footer>
-        <div class="container">
-            <ul class="follow_icon wow fadeInDown">
-                <li>
-                    <a href="#" class="fa fa-twitter"></a>
-                </li>
-                <li>
-                    <a href="#" class="fa fa-facebook"></a>
-                </li>
-                <li>
-                    <a href="#" class="fa fa-google-plus"></a>
-                </li>
-            </ul>
-            <hr class="wow zoomIn">
-            <p class="wow fadeInUp">
-                Cameron Ranch &copy; <em id="copyright-year"></em> <a ui-sref="privacy-policy">Privacy Policy</a>
-                <!-- Terms of use -->
-            </p>
-        </div>
-    </footer>
+    <footer ng-include="'/modules/core/views/footer.client.view.html'"></footer>
 
     <ng-include ng-show="state.current.name === 'home'" src="'/modules/core/views/google-map.client.view.html'"></ng-include>
 
