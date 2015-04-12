@@ -12,16 +12,18 @@ angular.module('core').controller('HeaderController', ['$state', '$scope',
 					});
 					//console.log("ran camera_init");
 				}, 0);
-
 				window.setTimeout(function() {
-					$scope.wow_init();
+					$scope.wow_init(1);
 				}, 1750);
 			});
 		};
-		$scope.wow_init = function() {
+		$scope.wow_init = function(go) {
 			$(document).ready(function() {
 				if ($('html').hasClass('desktop')) {
-					new WOW().init();
+					if(go === 1) {
+						new WOW().init();
+						console.log('wow init ran');
+					}
 				}
 			});
 		};

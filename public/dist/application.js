@@ -399,16 +399,18 @@ angular.module('core').controller('HeaderController', ['$state', '$scope',
 					});
 					//console.log("ran camera_init");
 				}, 0);
-
 				window.setTimeout(function() {
-					$scope.wow_init();
+					$scope.wow_init(1);
 				}, 1750);
 			});
 		};
-		$scope.wow_init = function() {
+		$scope.wow_init = function(go) {
 			$(document).ready(function() {
 				if ($('html').hasClass('desktop')) {
-					new WOW().init();
+					if(go === 1) {
+						new WOW().init();
+						console.log('wow init ran');
+					}
 				}
 			});
 		};
@@ -416,10 +418,9 @@ angular.module('core').controller('HeaderController', ['$state', '$scope',
 ]);
 'use strict';
 
-angular.module('core').controller('HomeController', ['$scope', 'Authentication',
-	function($scope, Authentication) {
-		// This provides Authentication context.
-		$scope.authentication = Authentication;
+angular.module('core').controller('HomeController', ['$scope',
+	function($scope) {
+
 	}
 ]);
 'use strict';
