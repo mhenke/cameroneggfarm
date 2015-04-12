@@ -1530,3 +1530,7 @@ h4.gallery {
   	color: #2F2F2F;
   	margin: 0 0 22px 0;
 }
+
+.wow {
+   visibility: hidden;
+}

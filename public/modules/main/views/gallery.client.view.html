@@ -15,7 +15,7 @@
             limit: 3,
             userId: 34336629,
             sortBy: 'most-recent',
-            template: '<div class="col-lg-4 col-md-6 col-sm-6 wow fadeInUp"><div class="thumb-pad4"><div class="thumbnail"><figure><a href="{{link}}"><img class="img-responsive" src="{{image}}" alt=""></a></figure><div class="caption"><p>{{caption}}</p><p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <a href="{{link}}">{{comments}}</a> / <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> <a href="{{link}}">{{likes}}</a></p></div></div></div></div>',
+            template: '<div class="col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.2s"><div class="thumb-pad4"><div class="thumbnail"><figure><a href="{{link}}"><img class="img-responsive" src="{{image}}" alt=""></a></figure><div class="caption"><p>{{caption}}</p><p><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> <a href="{{link}}">{{comments}}</a> / <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span> <a href="{{link}}">{{likes}}</a></p></div></div></div></div>',
 
 
         });
@@ -32,12 +32,14 @@
         <div class="container">
             <h2 class="wow fadeInUp">our gallery</h2>
             <!-- Picture One -->
-            <section class="row" id="instafeed"></section>
+            <section class="row" id="instafeed">
+                
+            </section>
 
         </div>
     </div>
     <div class="thumb-box9">
-        <div class="container">
+        <div class="container wow fadeInUp"  data-wow-delay="0.3s">
             <a href="javascript:void(0);" id="load-more" class="btn-default btn3">load more</a>
         </div>
     </div>
