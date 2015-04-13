@@ -20,7 +20,7 @@ angular.module('core').controller('HeaderController', ['$state', '$scope',
 					setTimeout(function() {
 						new WOW().init();
 						//console.log('wow init ran');
-					}, 1250);
+					}, 750);
 				}
 			});
 		};

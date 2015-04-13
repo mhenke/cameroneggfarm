@@ -75,11 +75,11 @@
   <![endif]-->
 </head>
 
-<body data-ng-controller="HeaderController" ng-cloak class="ng-cloak">
+<body data-ng-controller="HeaderController" data-ng-cloak class="ng-cloak">
     <!--header-->
     <div class="main">
         <header class="clearfix" data-ng-class="{indent: state.current.name === 'home'}">
-            <h1 class="navbar-brand navbar-brand_ wow fadeInLeft" data-wow-delay="0.2s"><a href="/#!/"><img ng-src="img/new/logo2.png" alt="logo"></a></h1>
+            <h1 class="navbar-brand navbar-brand_ wow fadeInLeft" data-wow-delay="0.2s"><a href="/#!/"><img data-ng-src="img/new/logo2.png" alt="logo"></a></h1>
             <nav class="navbar navbar-default navbar-static-top tm_navbar clearfix wow fadeInDown" role="navigation">
                 <ul class="nav sf-menu clearfix">
                     <li data-ng-class="{active: state.current.name === 'home'}"><a href="/#!/">Home</a>
@@ -98,9 +98,9 @@
             </nav>
         </header>
     </div>
-    <div class="slider" ng-show="state.current.name === 'home'" ng-init="wow_init()">
-        <div class="camera_wrap" ng-if="state.current.name === 'home'" ng-init="camera_init()" >
-            <div data-src="img/new/slide-3.jpg" ng-if="state.current.name !== 'home'" >
+    <div class="slider" data-ng-show="state.current.name === 'home'" data-ng-init="wow_init()">
+        <div class="camera_wrap" data-ng-if="state.current.name === 'home'" data-ng-init="camera_init()" >
+            <div data-src="img/new/slide-3.jpg" data-ng-if="state.current.name !== 'home'" >
                 <div class="camera_caption fadeIn">
                     <p class="title">Very yummy cattle, with
                         <br>an orange yolk</p>
@@ -143,14 +143,14 @@
         </div>
     </div>
     <!--content-->
-    <div class="content" data-ng-class="{indent: state.current.name !== 'home'}" ng-cloak class="ng-cloak">
+    <div class="content" data-ng-class="{indent: state.current.name !== 'home'}" data-ng-cloak class="ng-cloak">
         <!-- indent class for not home page -->
         {% block content %}{% endblock %}
     </div>
     <!--footer-->
-    <footer ng-include="'/modules/core/views/footer.client.view.html'"></footer>
+    <footer data-ng-include="'/modules/core/views/footer.client.view.html'"></footer>
 
-    <ng-include ng-show="state.current.name === 'home'" src="'/modules/core/views/google-map.client.view.html'"></ng-include>
+    <ng-include data-ng-show="state.current.name === 'home'" src="'/modules/core/views/google-map.client.view.html'"></ng-include>
 
     <script src="js/bootstrap.min.js"></script>
     <script src="js/tm-scripts.js"></script>

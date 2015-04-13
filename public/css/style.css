@@ -1531,6 +1531,9 @@ h4.gallery {
   	margin: 0 0 22px 0;
 }
 
+/* breaks display on mobile
+
 .wow {
    visibility: hidden;
 }
+*/
