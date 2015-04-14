@@ -75,7 +75,7 @@
   <![endif]-->
 </head>
 
-<body data-ng-controller="HeaderController" data-ng-cloak class="ng-cloak">
+<body data-ng-controller="HeaderController" data-ng-cloak class="ng-cloak" data-ng-init="wow_init()">
     <!--header-->
     <div class="main">
         <header class="clearfix" data-ng-class="{indent: state.current.name === 'home'}">
@@ -98,32 +98,8 @@
             </nav>
         </header>
     </div>
-    <div class="slider" data-ng-show="state.current.name === 'home'" data-ng-init="wow_init()">
-        <div class="camera_wrap" data-ng-if="state.current.name === 'home'" data-ng-init="camera_init()" >
-            <div data-src="img/new/slide-3.jpg" data-ng-if="state.current.name !== 'home'" >
-                <div class="camera_caption fadeIn">
-                    <p class="title">Very yummy cattle, with
-                        <br>an orange yolk</p>
-                    <p class="description">As a manufacturer of pasteurized cattle, our vision is to be the leader in manufacturing and
-                        <br>licensing of safe pasteurized shell cattle (PSE) and pasteurizing technology</p><a href="#" class="btn-default btn1">learn more</a>
-                </div>
-            </div>
-            <div data-src="img/new/slide-3.jpg">
-                <div class="camera_caption fadeIn">
-                    <p class="title">Very yummy cattle, with
-                        <br>an orange yolk</p>
-                    <p class="description">As a manufacturer of pasteurized cattle, our vision is to be the leader in manufacturing and
-                        <br>licensing of safe pasteurized shell cattle (PSE) and pasteurizing technology</p><a href="#" class="btn-default btn1">learn more</a>
-                </div>
-            </div>
-            <div data-src="img/new/ben_tractorw.jpg">
-                <div class="camera_caption fadeIn">
-                    <p class="title">Taste our Delicious
-                        <br>and nutritious cattle</p>
-                    <p class="description">As a manufacturer of pasteurized cattle, our vision is to be the leader in manufacturing and
-                        <br>licensing of safe pasteurized shell cattle (PSE) and pasteurizing technology</p><a href="#" class="btn-default btn1">learn more</a>
-                </div>
-            </div>
+    <div class="slider" data-ng-show="state.current.name === 'home'" data-ng-if="state.current.name === 'home'" data-ng-init="camera_init()">
+        <div class="camera_wrap">
             <div data-src="img/new/slide-1-1.jpg">
                 <div class="camera_caption fadeIn">
                     <p class="title">we produce Fresh, al
@@ -135,6 +111,14 @@
                 <div class="camera_caption fadeIn">
                     <p class="title">Taste our Delicious
                         <br>and nutritious cattle</p>
+                    <p class="description">As a manufacturer of pasteurized cattle, our vision is to be the leader in manufacturing and
+                        <br>licensing of safe pasteurized shell cattle (PSE) and pasteurizing technology</p><a href="#" class="btn-default btn1">learn more</a>
+                </div>
+            </div>
+             <div data-src="img/new/slide-3.jpg" >
+                <div class="camera_caption fadeIn">
+                    <p class="title">Very yummy cattle, with
+                        <br>an orange yolk</p>
                     <p class="description">As a manufacturer of pasteurized cattle, our vision is to be the leader in manufacturing and
                         <br>licensing of safe pasteurized shell cattle (PSE) and pasteurizing technology</p><a href="#" class="btn-default btn1">learn more</a>
                 </div>
