@@ -12,7 +12,7 @@ var email      = new sendgrid.Email();
  * Send an email
  */
 exports.send = function(req, res) {
-	email.addTo('henke.mike@gmail.com'); // req.body.to
+	email.addTo('bencameron1976@gmail.com'); // req.body.to
     email.setFrom(req.body.email); // req.body.from
     email.fromname = req.body.name;
     email.setSubject('Email from Cameron Ranch'); // req.body.subject
