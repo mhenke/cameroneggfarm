@@ -5,8 +5,7 @@
 var init = require('./config/init')(),
 	config = require('./config/config'),
 	mongoose = require('mongoose'),
-	chalk = require('chalk'),
-	newrelic = require('newrelic');
+	chalk = require('chalk');
 
 /**
  * Main application entry file.
@@ -21,6 +20,7 @@ var db = mongoose.connect(config.db, function(err) {
 	}
 });
 
+var newrelic = require('newrelic');
 // Init the express application
 var app = require('./config/express')(db);
 
