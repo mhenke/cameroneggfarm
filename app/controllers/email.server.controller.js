@@ -15,7 +15,7 @@ exports.send = function(req, res) {
 	email.addTo('bencameron1976@gmail.com'); // req.body.to
     email.setFrom(req.body.email); // req.body.from
     email.fromname = req.body.name;
-    email.setSubject('Email from Cameron Ranch'); // req.body.subject
+    email.setSubject('Email from Cameron Ranch website'); // req.body.subject
     email.setText(req.body.message); // req.body.text
     email.addHeader('X-Sent-Using', 'SendGrid-API');
     email.addHeader('X-Transport', 'web');
