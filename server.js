@@ -2,7 +2,8 @@
 /**
  * Module dependencies.
  */
-var init = require('./config/init')(),
+var newrelic = require('newrelic'),
+	init = require('./config/init')(),
 	config = require('./config/config'),
 	mongoose = require('mongoose'),
 	chalk = require('chalk');
@@ -20,7 +21,6 @@ var db = mongoose.connect(config.db, function(err) {
 	}
 });
 
-var newrelic = require('newrelic');
 // Init the express application
 var app = require('./config/express')(db);
 
